@@ -29,13 +29,17 @@ function App() {
       </IsAnon>
     } 
       />
-      <Route path="/signup" element= {
+      <Route 
+      path="/signup" 
+      element= {
       <IsAnon>
       <SignupPage />
       </IsAnon>
     } 
       />
-      <Route path="/user/:id" element= {
+      <Route 
+      path="/user/:id" 
+      element= {
       <IsPrivate>
        <ProfilePage/>
       </IsPrivate>

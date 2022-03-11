@@ -1,9 +1,13 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function HomePage() {
   return (
     <div>
-      <h1>HOMEPAGE</h1>
+      <button>About</button>
+      <Link to='/signup'>Sign Up</Link>
+      <Link to='/signup'>Log In</Link>
+      
     </div>
   )
 }
