@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-function SearchBar() {
+
+function Searchbar(props) {
+  const [search, setSearch] = useState('');
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    props.search(e.target.value);
+  };
+  
+
   return (
-    <div>SearchBar</div>
-  )
+    <div>
+      <h4>Search for movies:</h4>
+      <input type="text" value={search} onChange={handleChange} />
+    </div>
+  );
 }
 
-export default SearchBar
+export default Searchbar;

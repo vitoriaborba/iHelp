@@ -6,7 +6,7 @@ function HomePage() {
     <div>
       <button>About</button>
       <Link to='/signup'>Sign Up</Link>
-      <Link to='/signup'>Log In</Link>
+      <Link to='/login'>Log In</Link>
       
     </div>
   )
