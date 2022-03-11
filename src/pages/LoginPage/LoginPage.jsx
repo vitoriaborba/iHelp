@@ -23,9 +23,11 @@ function LoginPage(props) {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     const requestBody = { username, password };
+    console.log(requestBody)
  
     axios.post(`${API_URL}/login`, requestBody)
       .then((response) => {
+        console.log(response)
       // Request to the server's endpoint `/auth/login` returns a response
       // with the JWT string ->  response.data.authToken
         console.log('JWT token', response.data.authToken );
