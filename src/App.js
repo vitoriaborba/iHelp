@@ -1,5 +1,9 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { AuthContext } from './context/auth.context';
+import React, { useContext } from 'react';
+
+
 
 import IsAnon from './components/IsAnon/IsAnon';
 import IsPrivate from './components/IsPrivate/IsPrivate';
@@ -18,23 +22,25 @@ import WantToHelpPage from './pages/WantToHelpPage/WantToHelpPage';
 
 
 function App() {
+  const { loggedIn } = useContext(AuthContext);
+
   return (
     <div className="App">
     <Routes>
       <Route path="/" element= {<HomePage />} />
 
       <Route path="/login" element= {
-  
+      <IsAnon>
       <LoginPage />
-      
+      </IsAnon>
     } 
       />
       <Route 
       path="/signup" 
       element= {
-      
+      <IsAnon>
       <SignupPage />
-      
+      </IsAnon>
     } 
       />
       <Route 
@@ -64,9 +70,7 @@ function App() {
     } 
       />
       <Route path="/feed" element= {
-       <IsPrivate>
       <WantToHelpPage/>
-      </IsPrivate>
     } 
       />
       <Route path="/feed/:postId" element= {

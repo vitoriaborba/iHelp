@@ -1,11 +1,7 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/auth.context";
-
- 
-const API_URL = "http://localhost:5005";
- 
+import { AuthContext } from "../../context/auth.context"; 
  
 function LoginPage(props) {
   const [username, setUsername] = useState("");
@@ -14,7 +10,7 @@ function LoginPage(props) {
   
   const navigate = useNavigate();
  
-  const { storeToken } = useContext(AuthContext);
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleUsername = (e) => setUsername(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -23,18 +19,16 @@ function LoginPage(props) {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     const requestBody = { username, password };
-    console.log(requestBody)
  
-    axios.post(`${API_URL}/login`, requestBody)
+    axios.post(`${process.env.REACT_APP_API_URL}/login`, requestBody)
       .then((response) => {
-        console.log(response)
+        
       // Request to the server's endpoint `/auth/login` returns a response
       // with the JWT string ->  response.data.authToken
-        console.log('JWT token', response.data.authToken );
       
         storeToken(response.data.authToken);
-
-        navigate('/');                                
+        authenticateUser();
+        navigate('/feed');
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
