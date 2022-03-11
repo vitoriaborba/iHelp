@@ -20,7 +20,6 @@ import WantToHelpPage from './pages/WantToHelpPage/WantToHelpPage';
 function App() {
   return (
     <div className="App">
-
     <Routes>
       <Route path="/" element= {<HomePage />} />
       <Route path="/login" element= {<LoginPage />} />
@@ -33,6 +32,7 @@ function App() {
       <Route path="/feed/:postId" element= {<HelpDetails/>} />
       <Route path="/feed/:userId" element= {<UserRequests/>} />
     </Routes>
+    <NavBar/>
     </div>
   );
 }
