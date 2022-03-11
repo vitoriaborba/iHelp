@@ -17,14 +17,21 @@ import UserRequests from './pages/UserRequests/UserRequests';
 import WantToHelpPage from './pages/WantToHelpPage/WantToHelpPage';
 
 
-
-
 function App() {
   return (
     <div className="App">
 
     <Routes>
       <Route path="/" element= {<HomePage />} />
+      <Route path="/login" element= {<LoginPage />} />
+      <Route path="/signup" element= {<SignupPage />} />
+      <Route path="/user/:id" element= {<ProfilePage/>} />
+      <Route path="/user/:id" element= {<EditProfile/>} />
+      <Route path="/users" element= {<CommunityPage/>} />
+      <Route path="/post-create" element= {<NeedHelpPage/>} />
+      <Route path="/feed" element= {<WantToHelpPage/>} />
+      <Route path="/feed/:postId" element= {<HelpDetails/>} />
+      <Route path="/feed/:userId" element= {<UserRequests/>} />
     </Routes>
     </div>
   );
