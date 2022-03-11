@@ -22,15 +22,61 @@ function App() {
     <div className="App">
     <Routes>
       <Route path="/" element= {<HomePage />} />
-      <Route path="/login" element= {<LoginPage />} />
-      <Route path="/signup" element= {<SignupPage />} />
-      <Route path="/user/:id" element= {<ProfilePage/>} />
-      <Route path="/user/:id" element= {<EditProfile/>} />
-      <Route path="/users" element= {<CommunityPage/>} />
-      <Route path="/post-create" element= {<NeedHelpPage/>} />
-      <Route path="/feed" element= {<WantToHelpPage/>} />
-      <Route path="/feed/:postId" element= {<HelpDetails/>} />
-      <Route path="/feed/:userId" element= {<UserRequests/>} />
+
+      <Route path="/login" element= {
+      <IsAnon>
+      <LoginPage />
+      </IsAnon>
+    } 
+      />
+      <Route path="/signup" element= {
+      <IsAnon>
+      <SignupPage />
+      </IsAnon>
+    } 
+      />
+      <Route path="/user/:id" element= {
+      <IsPrivate>
+       <ProfilePage/>
+      </IsPrivate>
+    } 
+      />
+      <Route path="/user/:id" element= {
+      <IsPrivate>
+       <EditProfile/>
+      </IsPrivate>
+    } 
+      />
+      <Route path="/users" element= {
+      <IsPrivate>
+      <CommunityPage/>
+      </IsPrivate>
+    } 
+      />
+      <Route path="/post-create" element= {
+        <IsPrivate>
+      <NeedHelpPage/>
+      </IsPrivate>
+    } 
+      />
+      <Route path="/feed" element= {
+       <IsPrivate>
+      <WantToHelpPage/>
+      </IsPrivate>
+    } 
+      />
+      <Route path="/feed/:postId" element= {
+        <IsPrivate>
+      <HelpDetails/>
+      </IsPrivate>
+    } 
+      />
+      <Route path="/feed/:userId" element= {
+        <IsPrivate>
+      <UserRequests/>
+      </IsPrivate>
+    } 
+      />
     </Routes>
     <NavBar/>
     </div>
