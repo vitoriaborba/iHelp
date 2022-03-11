@@ -3,8 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import IsAnon from './components/IsAnon/IsAnon';
 import IsPrivate from './components/IsPrivate/IsPrivate';
-import NavBar from './components/Navbar/Navbar';
-
+import NavBar from './components/NavBar/NavBar';
 
 import CommunityPage from './pages/CommunityPage/CommunityPage';
 import EditProfile from './pages/EditProfile/EditProfile';
@@ -13,7 +12,7 @@ import HomePage from './pages/HomePage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import NeedHelpPage from './pages/NeedHelpPage/NeedHelpPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
-import SignUpPage from './pages/SignUpPage/SignUpPage';
+import SignupPage from './pages/SignupPage/SignupPage';
 import UserRequests from './pages/UserRequests/UserRequests';
 import WantToHelpPage from './pages/WantToHelpPage/WantToHelpPage';
 
@@ -26,7 +25,6 @@ function App() {
 
     <Routes>
       <Route path="/" element= {<HomePage />} />
-
     </Routes>
     </div>
   );
