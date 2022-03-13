@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import './SignupPage.css'
  
 const API_URL = "http://localhost:5005";
  
@@ -38,26 +39,12 @@ function SignupPage(props) {
 
   
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
- 
+    <div id='container'>
+    <div className="SignupPage" id="loginform">
+      <h1 id="headerTitle">Sign Up</h1>
+      <div>
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input 
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmail}
-        />
- 
-        <label>Password:</label>
-        <input 
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
- 
+      <div className="row">
         <label>Username:</label>
         <input 
           type="text"
@@ -65,14 +52,36 @@ function SignupPage(props) {
           value={username}
           onChange={handleUsername}
         />
- 
+ </div>
+      <div className="row">
+        <label>Email:</label>
+        <input 
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleEmail}
+        />
+ </div>
+ <div className="row">
+        <label>Password:</label>
+        <input 
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+        />
+ </div>
+ <div id="button" className="row">
         <button type="submit">Sign Up</button>
+        </div>
       </form>
- 
+ </div>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
- 
+      <div id="alternativeLogin">
       <p>Already have account?</p>
       <Link to={"/login"}> Login</Link>
+      </div>
+    </div>
     </div>
   )
 }

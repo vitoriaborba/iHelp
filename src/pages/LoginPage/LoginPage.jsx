@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context"; 
+import './LoginPage.css'
  
 function LoginPage(props) {
   const [username, setUsername] = useState("");
@@ -37,10 +38,12 @@ function LoginPage(props) {
   };
   
   return (
-    <div className="LoginPage">
-      <h1>Login</h1>
- 
+    <div id='container'>
+    <div className="LoginPage" id="loginform">
+      <h1 id="headerTitle" >Login</h1>
+      <div>
       <form onSubmit={handleLoginSubmit}>
+      <div className="row">
         <label>Username:</label>
         <input 
           type="text"
@@ -48,7 +51,8 @@ function LoginPage(props) {
           value={username}
           onChange={handleUsername}
         />
- 
+        </div>
+        <div className="row">
         <label>Password:</label>
         <input
           type="password"
@@ -56,13 +60,19 @@ function LoginPage(props) {
           value={password}
           onChange={handlePassword}
         />
- 
+        </div>
+        <div id="button" className="row">
         <button type="submit">Login</button>
+        </div>
       </form>
+      </div>
+      
       { errorMessage && <p className="error-message">{errorMessage}</p> }
- 
+      <div id="alternativeLogin">
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
+      </div>
+    </div>
     </div>
   )
 }

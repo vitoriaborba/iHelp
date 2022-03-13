@@ -2,13 +2,13 @@ import React, {useContext} from 'react'
 import {NavLink, Link} from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 
+
 function NavBar() {
   const {loggedIn, user, logoutUser} = useContext(AuthContext);
 
   return (
     <div>
-      
-      <Link to="/"> Homepage</Link>
+    
       {loggedIn && (
         <>
         <nav>
