@@ -43,14 +43,14 @@ function App() {
     } 
       />
       <Route 
-      path="/user/:id" 
+      path="/user" 
       element= {
       <IsPrivate>
        <ProfilePage/>
       </IsPrivate>
     } 
       />
-      <Route path="/user/:id" element= {
+      <Route path="/user/edit" element= {
       <IsPrivate>
        <EditProfile/>
       </IsPrivate>
@@ -80,7 +80,7 @@ function App() {
       </IsPrivate>
     } 
       />
-      <Route path="/feed/:userId" element= {
+      <Route path="/requests/:userId" element= {
         <IsPrivate>
       <UserRequests/>
       </IsPrivate>

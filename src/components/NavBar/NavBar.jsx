@@ -26,7 +26,7 @@ function NavBar(props) {
             navigate('/post-create')
             break;
         case 'account':
-            navigate('/user/:id')
+            navigate('/user')
             break;
         default:
             navigate('/')
