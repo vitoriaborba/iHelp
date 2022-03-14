@@ -17,6 +17,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import UserRequests from './pages/UserRequests/UserRequests';
 import WantToHelpPage from './pages/WantToHelpPage/WantToHelpPage';
+import UserDetails from './pages/UserDetails/UserDetails';
 
 function App() {
   const { loggedIn } = useContext(AuthContext);
@@ -47,6 +48,14 @@ function App() {
       element= {
       <IsPrivate>
        <ProfilePage/>
+      </IsPrivate>
+    } 
+      />
+         <Route 
+      path="/user/:id" 
+      element= {
+      <IsPrivate>
+       <UserDetails/>
       </IsPrivate>
     } 
       />

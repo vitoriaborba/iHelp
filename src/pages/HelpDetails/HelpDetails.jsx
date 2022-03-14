@@ -6,7 +6,6 @@ import { Link, useParams } from 'react-router-dom';
 function HelpDetails() {
   const [postDetail, setPostDetail] = useState(null);
   const {postId} = useParams();
-  let authorId;
 
   const fetchPostDetail = async () => {
     try {
@@ -16,7 +15,6 @@ function HelpDetails() {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
       setPostDetail(response.data);
-      authorId = postDetail.author._id;
     } catch (error) {
       console.log(error);
     }
@@ -26,11 +24,12 @@ function HelpDetails() {
     fetchPostDetail();
   }, []);
 
+
   return (
     <div>
       {postDetail && (
-        <>
-        <Link to={`/user/${authorId}`}>
+        <> 
+        <Link to={`/user/${postDetail.author._id}`}>
             <div>
             <img src={postDetail.author.image} style={{width:25, height:20}} alt="" />
             <h6>{postDetail.author.username}</h6>
@@ -44,7 +43,11 @@ function HelpDetails() {
           {postDetail.comments.map((comment)=> {
               return (
                 <div key={comment._id}>
+                   
+                  <div>
+                  <img src={postDetail.author.image} style={{width:15, height:10}} alt="" />
                   <h6>{comment.author.username}</h6>
+                  </div>
                   <p>{comment.content}</p>
                 </div>
               );

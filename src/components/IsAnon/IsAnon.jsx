@@ -12,7 +12,7 @@ function IsAnon( { children } ) {
  
   if (loggedIn) {
     // If the user is logged in, navigate to home page     
-    return <Navigate to="/" />;
+    return <Navigate to="/feed" />;
   } else {
     // If the user is not logged in, allow to see the page 
     return children;
