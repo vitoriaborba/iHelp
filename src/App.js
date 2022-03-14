@@ -24,7 +24,9 @@ function App() {
   return (
     <div className="App">
     <Routes>
+ 
       <Route path="/" element= {<HomePage />} />
+
 
       <Route path="/login" element= {
       <IsAnon>
@@ -41,14 +43,14 @@ function App() {
     } 
       />
       <Route 
-      path="/user/:id" 
+      path="/user" 
       element= {
       <IsPrivate>
        <ProfilePage/>
       </IsPrivate>
     } 
       />
-      <Route path="/user/:id" element= {
+      <Route path="/user/edit" element= {
       <IsPrivate>
        <EditProfile/>
       </IsPrivate>
@@ -67,7 +69,9 @@ function App() {
     } 
       />
       <Route path="/feed" element= {
-      <WantToHelpPage/>
+         <IsPrivate>
+           <WantToHelpPage/>
+         </IsPrivate>
     } 
       />
       <Route path="/feed/:postId" element= {
@@ -76,7 +80,7 @@ function App() {
       </IsPrivate>
     } 
       />
-      <Route path="/feed/:userId" element= {
+      <Route path="/requests/:userId" element= {
         <IsPrivate>
       <UserRequests/>
       </IsPrivate>

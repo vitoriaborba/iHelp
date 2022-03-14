@@ -12,7 +12,6 @@ function Searchbar(props) {
 
   return (
     <div>
-      <h4>Search for Community Members:</h4>
       <input type="text" value={search} onChange={handleChange} />
     </div>
   );

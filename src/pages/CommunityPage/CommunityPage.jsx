@@ -33,6 +33,7 @@ function CommunityPage() {
 
   return (
     <div>
+      <h4>Search for Community Members:</h4>
   <Searchbar search={searchFilter} />
   {users.map((user)=> {
     return (

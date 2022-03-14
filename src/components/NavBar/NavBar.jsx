@@ -14,7 +14,7 @@ function NavBar(props) {
   const navigate = useNavigate()
   const [activeTabs, setActiveTabs] = useState(props.name)
 
- /*  useEffect(() => {
+ useEffect(() => {
     switch (activeTabs) {
         case 'feed':
             navigate('/feed')
@@ -26,13 +26,13 @@ function NavBar(props) {
             navigate('/post-create')
             break;
         case 'account':
-            navigate('/user/:id')
+            navigate('/user')
             break;
         default:
-            navigate('/feed')
+            navigate('/')
             break;
     }
-}, [activeTabs, navigate]) */
+}, [activeTabs]) 
 
   return (
 
@@ -45,7 +45,7 @@ function NavBar(props) {
                 {activeTabs === 'feed' ?
                     <RiHomeSmile2Fill
                         size='35'
-                        color='#FFBB33'
+                        color='#0568c5'
                         onClick={() => setActiveTabs('feed')}
                     /> :
                     <RiHomeSmile2Fill
@@ -58,7 +58,7 @@ function NavBar(props) {
                 {activeTabs === 'publish' ?
                     <IoIosAddCircle
                         size='35'
-                        color='#FFBB33'
+                        color='#0568c5'
                         onClick={() => setActiveTabs('publish')}
                     /> :
                     <IoIosAddCircleOutline
@@ -71,7 +71,7 @@ function NavBar(props) {
                 {activeTabs === 'search' ?
                     <RiSearchEyeFill
                         size='35'
-                        color='#FFBB33'
+                        color='#0568c5'
                         onClick={() => setActiveTabs('search')}
                     /> :
                     <BiSearchAlt
@@ -84,7 +84,7 @@ function NavBar(props) {
                 {activeTabs === 'account' ?
                     <CgProfile
                         size='35'
-                        color='#FFBB33'
+                        color='#0568c5'
                         onClick={() => setActiveTabs('account')}
                     /> :
                     <CgProfile
@@ -97,7 +97,7 @@ function NavBar(props) {
             {activeTabs === 'logout' ?
                     <IoIosLogOut
                         size='35'
-                        color='#FFBB33'
+                        color='#0568c5'
                         onClick={() => setActiveTabs({logoutUser})}
                     /> :
                     <IoIosLogOut
