@@ -14,7 +14,7 @@ function NavBar(props) {
   const navigate = useNavigate()
   const [activeTabs, setActiveTabs] = useState(props.name)
 
- /*  useEffect(() => {
+ useEffect(() => {
     switch (activeTabs) {
         case 'feed':
             navigate('/feed')
@@ -29,10 +29,10 @@ function NavBar(props) {
             navigate('/user/:id')
             break;
         default:
-            navigate('/feed')
+            navigate('/')
             break;
     }
-}, [activeTabs, navigate]) */
+}, [activeTabs]) 
 
   return (
 

@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 
 
 function HelpDetails() {
-  const [postDetail, setPostDetail] = useState([]);
+  const [postDetail, setPostDetail] = useState(null);
   const {postId} = useParams();
   let authorId;
 
@@ -28,7 +28,9 @@ function HelpDetails() {
 
   return (
     <div>
-   <Link to={`/user/${authorId}`}>
+      {postDetail && (
+        <>
+        <Link to={`/user/${authorId}`}>
             <div>
             <img src={postDetail.author.image} style={{width:25, height:20}} alt="" />
             <h6>{postDetail.author.username}</h6>
@@ -42,7 +44,7 @@ function HelpDetails() {
           {postDetail.comments.map((comment)=> {
               return (
                 <div key={comment._id}>
-                  <h6>{comment.author}</h6>
+                  <h6>{comment.author.username}</h6>
                   <p>{comment.content}</p>
                 </div>
               );
@@ -52,6 +54,9 @@ function HelpDetails() {
               <textarea name='content' cols='30' rows='2'></textarea>
               <button type="submit">Send</button>
               </form>  
+        </>
+      )}
+   
     </div>
   )
 }
