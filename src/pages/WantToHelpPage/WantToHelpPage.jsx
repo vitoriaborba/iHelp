@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import NeedHelpPage from '../NeedHelpPage/NeedHelpPage';
 
-function ProjectsListPage() {
+function WantToHelpPage() {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
@@ -31,11 +30,25 @@ function ProjectsListPage() {
       {posts.map((post) => {
         return (
           <div key={post._id}>
-            <Link to={`/projects/${post._id}`}>
+            <Link to={`/user/${post.author._id}`}>
+              <div>
+              <img src={post.author.image} style={{width:25, height:20}} alt="" />
               <h6>{post.author.username}</h6>
+              </div>
             </Link>
-            <h3>{post.description}</h3>
+            {post.image && (
+             <img src={post.image} alt="" /> 
+            )} 
+            <article>{post.description}</article>
 
+            <Link to={`/feed/${post._id}`}>
+              {post.comments.length === 1 && (
+                <h6>{post.comments.length} Comment</h6>
+              )}
+              {post.comments.length !== 1 && (
+                <h6>{post.comments.length} Comments</h6>
+              )}
+              </Link>
           </div>
         );
       })}
@@ -43,4 +56,4 @@ function ProjectsListPage() {
   );
 }
 
-export default ProjectsListPage;
+export default WantToHelpPage;
