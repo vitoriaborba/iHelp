@@ -32,15 +32,16 @@ function CommunityPage() {
   };
 
   return (
-    <div>
-      <h4>Search for Community Members:</h4>
+    <div className='searchPage'>
+      <h3>Search for Community Members:</h3>
   <Searchbar search={searchFilter} />
-  {users.map((user)=> {
+  <div className='search'>
+    {users.map((user)=> {
     return (
-       <div key={user._id}>
-       <Link to={`/user/${user._id}`}>
-              <div>
-              <img src={user.image} style={{width:45, height:40, borderRadius:50}} alt="" />
+       <div className='users' key={user._id}>
+       <Link className='text-link' to={`/user/${user._id}`}>
+              <div className='searchUser'>
+              <img src={user.image} style={{width:75, height:70}} alt="" />
               <h6>{user.username}</h6>
               </div>
             </Link>
@@ -48,6 +49,8 @@ function CommunityPage() {
     );
     
   })}
+  </div>
+  
     </div>
   )
 }

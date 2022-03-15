@@ -3,7 +3,8 @@ import { AuthContext } from '../../context/auth.context'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import {RiHomeSmile2Fill, RiSearchEyeFill } from 'react-icons/ri'
+import {MdOutlineFeed, MdFeed } from 'react-icons/md'
+import { RiSearchEyeFill } from 'react-icons/ri'
 import { BiSearchAlt } from 'react-icons/bi'
 import { CgProfile } from 'react-icons/cg';
 import { IoIosAddCircleOutline, IoIosAddCircle, IoIosLogOut } from 'react-icons/io'
@@ -43,12 +44,12 @@ function NavBar(props) {
     <div className='bottom-nav'>
             <div className='bn-tab'>
                 {activeTabs === 'feed' ?
-                    <RiHomeSmile2Fill
+                    <MdOutlineFeed
                         size='35'
                         color='#0568c5'
                         onClick={() => setActiveTabs('feed')}
                     /> :
-                    <RiHomeSmile2Fill
+                    <MdFeed
                         size='35'
                         color='#BDBCBC'
                         onClick={() => setActiveTabs('feed')}
@@ -56,25 +57,25 @@ function NavBar(props) {
             </div>
             <div className='bn-tab'>
                 {activeTabs === 'publish' ?
-                    <IoIosAddCircle
-                        size='35'
-                        color='#0568c5'
-                        onClick={() => setActiveTabs('publish')}
-                    /> :
                     <IoIosAddCircleOutline
                         size='35'
                         color='#BDBCBC'
+                        onClick={() => setActiveTabs('publish')}
+                    /> :
+                    <IoIosAddCircle
+                        size='35'
+                        color='#0568c5'
                         onClick={() => setActiveTabs('publish')}
                     />}
             </div>
             <div className='bn-tab'>
                 {activeTabs === 'search' ?
-                    <RiSearchEyeFill
+                    <BiSearchAlt
                         size='35'
                         color='#0568c5'
                         onClick={() => setActiveTabs('search')}
                     /> :
-                    <BiSearchAlt
+                    <RiSearchEyeFill
                         size='35'
                         color='#BDBCBC'
                         onClick={() => setActiveTabs('search')}

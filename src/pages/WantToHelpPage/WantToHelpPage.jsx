@@ -12,26 +12,28 @@ function WantToHelpPage() {
       let response = await axios.get(`${process.env.REACT_APP_API_URL}/feed`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
-      console.log(response.data)
       setPosts(response.data);
       
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(posts)
 
   useEffect(() => {
     fetchPosts();
   }, []);
 
   return (
-    <div >
     
-      {posts.map((post) => {
+    <div className='container'>
+      {posts && (
+        <>
+       {posts.map((post) => {
         return (
-          <div key={post._id}>
-            <Link to={`/user/${post.author._id}`}>
-              <div>
+          <div className='post' key={post._id}>
+            <Link className='text-link' to={`/user/${post.author._id}`}>
+              <div className='userinfo'>
               <img src={post.author.image} style={{width:25, height:20}} alt="" />
               <h6>{post.author.username}</h6>
               </div>
@@ -39,9 +41,9 @@ function WantToHelpPage() {
             {post.image && (
              <img src={post.image} alt="" /> 
             )} 
-            <article>{post.description}</article>
-
-            <Link to={`/feed/${post._id}`}>
+            <div className='comments'>
+              <article>{post.description}</article>
+            <Link className='text-link' to={`/feed/${post._id}`}>
               {post.comments.length === 1 && (
                 <h6>{post.comments.length} Comment</h6>
               )}
@@ -49,9 +51,12 @@ function WantToHelpPage() {
                 <h6>{post.comments.length} Comments</h6>
               )}
               </Link>
+            </div>
           </div>
         );
-      })}
+      })} 
+        </>
+      )}
     </div>
   );
 }

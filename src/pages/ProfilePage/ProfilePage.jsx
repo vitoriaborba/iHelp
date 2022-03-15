@@ -27,6 +27,9 @@ function ProfilePage() {
      <Link to={`/user/edit`}>Edit Profile</Link>
       <h2>Hello, {user.username}</h2>
       <img src={user.image} style={{width:220, height:200}} alt="" />
+      <hr />
+      <h3>Endorsements</h3>
+      😊😐🙁
     </div>
   )
 }

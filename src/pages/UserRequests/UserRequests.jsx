@@ -36,15 +36,15 @@ function UserRequests() {
           <>
           {UsersPosts.posts.map((post)=> {
              return (
-               <div key={post._id}>
+               <div className='post' key={post._id}>
               <input type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} />
-              <div>
+              <div className='description'>
                 {post.image && (
                  <img src={post.image} alt="" /> 
                 )} 
                 <article>{post.description}</article>
     
-                <Link to={`/feed/${post._id}`}>
+                <Link className='text-link' to={`/feed/${post._id}`}>
                   {post.comments.length === 1 && (
                     <h6>{post.comments.length} Comment</h6>
                   )}
@@ -64,7 +64,7 @@ function UserRequests() {
           <>
           {UsersPosts.postsCompleted.map((post)=> {
              return (
-               <div key={post._id}>
+               <div className='post' key={post._id}>
               <input type="checkbox" name="isDone" value={post.isDone} checked={true} onChange={handleDoneInput} />
               <div>
                 {post.image && (
@@ -72,7 +72,7 @@ function UserRequests() {
                 )} 
                 <article>{post.description}</article>
     
-                <Link to={`/feed/${post._id}`}>
+                <Link className='text-link' to={`/feed/${post._id}`}>
                   {post.comments.length === 1 && (
                     <h6>{post.comments.length} Comment</h6>
                   )}

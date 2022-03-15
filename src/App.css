@@ -1,0 +1,90 @@
+.userinfo {
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    padding: 10px 0;
+}
+.users {
+ padding: 15px;
+}
+.searchUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+.container {
+    width: 40%;
+    height: 70%;
+    padding: 10px;
+    background-color: #ffffff;
+    text-align:start;
+}
+.search {   
+    display: flex;
+    flex-direction: row;
+    max-width: 500px;
+    min-width: 300px;
+    max-height: 700px;
+    width: 30%;
+    height: 60%;
+    margin: 100px auto;
+    background-color: #ffffff;
+    border-radius: 25px;
+}
+.comments {
+    padding-bottom: 20px;
+}
+.post {
+    border: 1px solid rgba(163, 163, 163, 0.432);
+    margin: 20px 40px;
+    margin-top: 20;
+    padding-left: 20px;
+    border-radius: 25px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+} 
+.description {
+    margin: 20px;
+}
+h3 {
+    text-align: center;
+    color: #999797ab;
+    font-family: 'open sans', sans-serif;
+}
+.html {
+   display: flex;
+   flex-direction: column;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+.homepage {
+    height: 80vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.searchPage input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+    transition: box-shadow 0.2s ease-in;
+    margin-right: 20;
+}
+
+.searchPage {
+   padding-top: 30px;
+}

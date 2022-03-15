@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth.context';
 
 function NeedHelpPage() {
   const [locationInput, setLocationInput] = useState('');
   const [getLocation, setGetLocation] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState(null);
+
+  const { user } = useContext(AuthContext);
+
 
   const navigate = useNavigate();
   
@@ -17,7 +22,6 @@ function NeedHelpPage() {
     axios
       .get(`https://geoptapi.org/municipio?`)
       .then((response) => {
-        console.log(response.data);
         setLocationInput(response.data);
       })
       .catch((err) => {
@@ -25,25 +29,19 @@ function NeedHelpPage() {
       });
   }, [getLocation]);
 
-  const handleLocationInput = (e) => setLocationInput(e.target.value);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setGetLocation(locationInput);
-   
-  };
-
   if(locationInput) {
       locationInput.forEach((location) => {
         const option = { value:`${location.toLowerCase()}`, label:`${location}`}
         locationOptions.push(option)
       })
   }
-  //console.log(locationOptions)
 
   const handlePostSubmit = (e) => {
     e.preventDefault();
 
-    const body = { description, image };
+    const body = {locationOptions, description, image, user };
+
+    console.log(body)
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/post-create/`, body)
@@ -61,11 +59,11 @@ function NeedHelpPage() {
     <div>
        
       <form onSubmit={handlePostSubmit}>
+
         <Select options={locationOptions} />
-        <input type="file" id="image_input" accept="image/png, image/jpg">
-        </input>
-   
-        
+
+        <input type="file" id="image_input" accept="image/png, image/jpg"/>
+
         <label htmlFor="description">Description:</label>
         <input
           type="text"
@@ -74,11 +72,7 @@ function NeedHelpPage() {
           onChange={(e) => setDescription(e.target.value)}
         />
          <button type="submit">Publish</button>
-  
-    
-
       </form>
-
 
     </div>
   );
