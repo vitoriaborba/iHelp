@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function WantToHelpPage() {
+function Feed() {
   const [posts, setPosts] = useState([]);
   const storedToken = localStorage.getItem('authToken');
 
@@ -61,4 +61,4 @@ function WantToHelpPage() {
   );
 }
 
-export default WantToHelpPage;
+export default Feed;

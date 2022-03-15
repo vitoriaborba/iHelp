@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-function CommunityPage() {
+function Community() {
   const  [users, setUsers] = useState([])
 
   const fetchUsers = async () => {
@@ -55,4 +55,4 @@ function CommunityPage() {
   )
 }
 
-export default CommunityPage
+export default Community

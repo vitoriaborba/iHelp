@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth.context';
 
-function NeedHelpPage() {
+function NewPost() {
   const [locationInput, setLocationInput] = useState('');
   const [getLocation, setGetLocation] = useState('');
   const [description, setDescription] = useState('');
@@ -81,5 +81,5 @@ function NeedHelpPage() {
     </div>
   );
 }
-export default NeedHelpPage
+export default NewPost
 
