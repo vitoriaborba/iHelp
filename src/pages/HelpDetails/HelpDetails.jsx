@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
-
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/auth.context';
 
 function HelpDetails() {
   const [postDetail, setPostDetail] = useState(null);
   const {postId} = useParams();
+  const [content, setContent] = useState('')
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
 
   const fetchPostDetail = async () => {
     try {
@@ -19,11 +23,32 @@ function HelpDetails() {
       console.log(error);
     }
   };
+
   console.log(postDetail)
+
+
   useEffect(() => {
     fetchPostDetail();
-  }, []);
+  }, [content]);
 
+  const handlePostSubmit = (e) => {
+    e.preventDefault();
+
+    const body = {content, user, postId};
+    const storedToken = localStorage.getItem('authToken');
+
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/comment/${postId}`, body, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        setContent('')
+        
+        navigate(`/feed/${postId}`);
+      })
+      .catch((err) => console.log(err));
+
+  }
 
   return (
     <div>
@@ -52,11 +77,19 @@ function HelpDetails() {
                 </div>
               );
             })}
-            <form action="" method="post">
+            <form onSubmit={handlePostSubmit} method="post">
               <label htmlFor="addComment">New Comment</label>
-              <textarea name='content' cols='30' rows='2'></textarea>
+            {/*   <textarea name='content' cols='30' rows='2'></textarea>
+ */}
+              <input
+                type="text"
+                name="content"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
+
               <button type="submit">Send</button>
-              </form>  
+            </form>  
         </>
       )}
    

@@ -32,12 +32,12 @@ function WantToHelpPage() {
        {posts.map((post) => {
         return (
           <div className='post' key={post._id}>
-            <Link className='text-link' to={`/user/${post.author._id}`}>
+            {post.author && <Link className='text-link' to={`/user/${post.author._id}`}>
               <div className='userinfo'>
               <img src={post.author.image} style={{width:25, height:20}} alt="" />
               <h6>{post.author.username}</h6>
               </div>
-            </Link>
+            </Link>}
             {post.image && (
              <img src={post.image} alt="" /> 
             )} 
