@@ -9,8 +9,28 @@ function HelpDetails() {
   const [content, setContent] = useState('')
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const [deletedComment, setDeletedComment] = useState('')
 
+  const deleteComment = () => {
+    const storedToken = localStorage.getItem('authToken');
 
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/post/${deletedComment}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then ((response)=> {
+        setDeletedComment(response.comments._id)
+      })
+  }
+  const deletePost = () => {
+    const storedToken = localStorage.getItem('authToken');
+
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/feed/${postId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then (()=> navigate(`/feed`))
+  }
   const fetchPostDetail = async () => {
     try {
       const storedToken = localStorage.getItem('authToken');
@@ -49,18 +69,9 @@ function HelpDetails() {
       .catch((err) => console.log(err));
 
   }
-  const deleteComment = () => {
-    const storedToken = localStorage.getItem('authToken');
-
-    axios
-      .delete(`${process.env.REACT_APP_API_URL}/post/`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then (()=> navigate(`/feed/${postId}`))
-  }
 
   return (
-    <div>
+    <div className='scroll'>
       {postDetail && (
         <> 
         <Link to={`/user/${postDetail.author._id}`}>
@@ -73,7 +84,7 @@ function HelpDetails() {
              <img src={postDetail.image} alt="" /> 
             )} 
             <article>{postDetail.description}</article>
-            
+            <button onClick={deletePost}>Delete</button>
           {postDetail.comments.map((comment)=> {
               return (
                 <div key={comment._id}>

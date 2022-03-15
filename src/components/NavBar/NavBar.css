@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position:fixed;
     bottom: 0;
     border-top: 1px solid rgb(230, 230, 230);
   }

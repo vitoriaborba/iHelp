@@ -47,7 +47,7 @@ function NavBar(props) {
                     <MdOutlineFeed
                         size='35'
                         color='#0568c5'
-                        onClick={() => setActiveTabs('feed')}
+                        onClick={() => setActiveTabs('feed') }
                     /> :
                     <MdFeed
                         size='35'

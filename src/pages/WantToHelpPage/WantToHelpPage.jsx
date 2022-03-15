@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 
 function WantToHelpPage() {
   const [posts, setPosts] = useState([]);
+  const storedToken = localStorage.getItem('authToken');
 
   const fetchPosts = async () => {
     try {
-      const storedToken = localStorage.getItem('authToken');
-
       let response = await axios.get(`${process.env.REACT_APP_API_URL}/feed`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
@@ -23,6 +22,7 @@ function WantToHelpPage() {
   useEffect(() => {
     fetchPosts();
   }, []);
+
 
   return (
     

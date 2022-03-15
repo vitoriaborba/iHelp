@@ -18,13 +18,14 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import UserRequests from './pages/UserRequests/UserRequests';
 import WantToHelpPage from './pages/WantToHelpPage/WantToHelpPage';
 import UserDetails from './pages/UserDetails/UserDetails';
+import Logo from './components/Logo/Logo';
 
 function App() {
   const { loggedIn } = useContext(AuthContext);
 
   return (
-    <div className="App">
-      <img style={{width:50, marginLeft:20, marginTop:10}}src="https://images.pling.com/img/00/00/52/78/02/1292217/125ac9300428bfa3aa0ec3da27361d679aad.png" alt="" />
+    <div className='flex' >
+      <Logo></Logo>
     <Routes>
  
       <Route path="/" element= {<HomePage />} />

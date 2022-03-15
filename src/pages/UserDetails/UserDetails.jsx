@@ -24,7 +24,7 @@ function UserDetails() {
   }, []);
   
   return (
-    <div>
+    <div className='scroll'>
      <Link to={`/requests/${user._id}`}>User requests</Link>
      <div>
         <img src={user.image} style={{width:220, height:200}} alt="" /> 

@@ -30,7 +30,7 @@ function UserRequests() {
 
 
   return (
-    <div >
+    <div className='scroll'>
       <h3>Pending</h3>
         {UsersPosts.posts && (
           <>

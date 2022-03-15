@@ -17,9 +17,8 @@
     text-decoration: inherit;
 }
 .container {
-    width: 40%;
-    height: 70%;
     padding: 10px;
+    margin: 5rem 0;
     background-color: #ffffff;
     text-align:start;
 }
@@ -38,7 +37,7 @@
 .comments {
     padding-bottom: 20px;
 }
-.post {
+/* .post {
     border: 1px solid rgba(163, 163, 163, 0.432);
     margin: 20px 40px;
     margin-top: 20;
@@ -48,6 +47,9 @@
     display: flex;
     align-items: center;
 } 
+.post article {
+   
+} */
 .description {
     margin: 20px;
 }
@@ -87,4 +89,17 @@ h3 {
 
 .searchPage {
    padding-top: 30px;
+}
+.logo { 
+    position: fixed;
+    width: 100vw;
+    height: 6vh;
+    background-color: white;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+.scroll {
+    margin: 5rem 0;
 }

@@ -22,7 +22,7 @@ function ProfilePage() {
     fetchUsers();
   }, []);
   return (
-    <div>
+    <div className='scroll'>
      <Link to={`/requests/${user._id}`}>My requests</Link>
      <Link to={`/user/edit`}>Edit Profile</Link>
       <h2>Hello, {user.username}</h2>

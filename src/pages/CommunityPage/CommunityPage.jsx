@@ -32,7 +32,7 @@ function CommunityPage() {
   };
 
   return (
-    <div className='searchPage'>
+    <div className='searchPage scroll'>
       <h3>Search for Community Members:</h3>
   <Searchbar search={searchFilter} />
   <div className='search'>

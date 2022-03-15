@@ -40,11 +40,14 @@ function NeedHelpPage() {
     e.preventDefault();
 
     const body = {locationOptions, description, image, user };
+    const storedToken = localStorage.getItem('authToken');
 
     console.log(body)
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/post-create/`, body)
+      .post(`${process.env.REACT_APP_API_URL}/post-create/`, body, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
         setImage(null);
         setDescription('');
@@ -67,6 +70,7 @@ function NeedHelpPage() {
         <label htmlFor="description">Description:</label>
         <input
           type="text"
+          maxLength='280'
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
