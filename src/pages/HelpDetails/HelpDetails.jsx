@@ -9,9 +9,10 @@ function HelpDetails() {
   const [content, setContent] = useState('')
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  const [deletedComment, setDeletedComment] = useState('')
+  const [isUpdated, setIsUpdated] = useState(true)
 
   const deleteComment = (commentId) => {
+    console.log(commentId)
     const storedToken = localStorage.getItem('authToken');
 
     axios
@@ -19,7 +20,8 @@ function HelpDetails() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then ((response)=> {
-        
+        setIsUpdated(false)
+        navigate(`/feed/${postId}`);
       })
   }
   const deletePost = () => {
@@ -49,7 +51,8 @@ function HelpDetails() {
 
   useEffect(() => {
     fetchPostDetail();
-  }, [content]);
+    setIsUpdated(true);
+  }, [content, isUpdated]);
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
@@ -94,7 +97,7 @@ console.log(postDetail)
                   <h6>{comment.author.username}</h6>
                   </div>
                   <p>{comment.content}</p>
-                  <button onClick={deleteComment(comment._id)}>X</button>
+                  <button onClick={() => deleteComment(comment._id)}>X</button>
                 </div>
               );
             })}
