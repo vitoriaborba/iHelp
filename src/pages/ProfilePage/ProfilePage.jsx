@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../../context/auth.context'
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import { IoIosLogOut } from 'react-icons/io'
 
 function ProfilePage() {
   const  [user, setUser] = useState([])
+  const {logoutUser} = useContext(AuthContext);
 
   const fetchUsers = async () => {
     try {
@@ -25,6 +28,11 @@ function ProfilePage() {
     <div className='scroll'>
      <Link to={`/requests/${user._id}`}>My requests</Link>
      <Link to={`/user/edit`}>Edit Profile</Link>
+     <IoIosLogOut
+        size='35'
+        color='#0568c5'
+        onClick={logoutUser}
+      />
       <h2>Hello, {user.username}</h2>
       <img src={user.image} style={{width:220, height:200}} alt="" />
       <hr />

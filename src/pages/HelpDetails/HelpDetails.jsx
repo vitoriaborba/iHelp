@@ -11,15 +11,15 @@ function HelpDetails() {
   const { user } = useContext(AuthContext);
   const [deletedComment, setDeletedComment] = useState('')
 
-  const deleteComment = () => {
+  const deleteComment = (commentId) => {
     const storedToken = localStorage.getItem('authToken');
 
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/post/${deletedComment}`, {
+      .delete(`${process.env.REACT_APP_API_URL}/post/${commentId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then ((response)=> {
-        setDeletedComment(response.comments._id)
+        
       })
   }
   const deletePost = () => {
@@ -69,7 +69,7 @@ function HelpDetails() {
       .catch((err) => console.log(err));
 
   }
-
+console.log(postDetail)
   return (
     <div className='scroll'>
       {postDetail && (
@@ -94,7 +94,7 @@ function HelpDetails() {
                   <h6>{comment.author.username}</h6>
                   </div>
                   <p>{comment.content}</p>
-                  <button onClick={deleteComment}>X</button>
+                  <button onClick={deleteComment(comment._id)}>X</button>
                 </div>
               );
             })}
