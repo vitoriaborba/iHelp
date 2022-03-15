@@ -31,7 +31,7 @@ function HelpDetails() {
     fetchPostDetail();
   }, [content]);
 
-  const handlePostSubmit = (e) => {
+  const handleCommentSubmit = (e) => {
     e.preventDefault();
 
     const body = {content, user, postId};
@@ -87,7 +87,7 @@ function HelpDetails() {
                 </div>
               );
             })}
-            <form onSubmit={handlePostSubmit} method="post">
+            <form onSubmit={handleCommentSubmit} method="post">
               <label htmlFor="addComment">New Comment</label>
               <textarea
                 type="text"
