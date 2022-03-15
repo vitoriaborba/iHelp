@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth.context';
+import './PostDetails.css'
 
 function PostDetails() {
   const [postDetail, setPostDetail] = useState(null);
@@ -74,33 +75,44 @@ function PostDetails() {
   }
 console.log(postDetail)
   return (
-    <div className='scroll'>
+    <div className='postdetails scroll'>
       {postDetail && (
-        <> 
-        <Link to={`/user/${postDetail.author._id}`}>
-            <div>
+        <>  
+        <div className='post-d'>
+          <div className='deletebtn'>
+             <Link to={`/user/${postDetail.author._id}`}>
+            <div className='userinfo'>
             <img src={postDetail.author.image} style={{width:25, height:20}} alt="" />
             <h6>{postDetail.author.username}</h6>
             </div>
           </Link> 
-          {postDetail.image && (
+          <button onClick={deletePost}>X</button>
+          </div>
+            {postDetail.image && (
              <img src={postDetail.image} alt="" /> 
             )} 
             <article>{postDetail.description}</article>
-            <button onClick={deletePost}>Delete</button>
+          
+            <h6>Comments</h6> 
+             <hr />
           {postDetail.comments.map((comment)=> {
               return (
                 <div key={comment._id}>
-                   
-                  <div>
-                  <img src={postDetail.author.image} style={{width:15, height:10}} alt="" />
+                  <div className='deletebtn'>
+                   <Link to={`/user/${postDetail.author._id}`}>
+                  <div className='userinfo'>
+                  <img src={postDetail.author.image} style={{width:25, height:20}} alt="" />
                   <h6>{comment.author.username}</h6>
                   </div>
-                  <p>{comment.content}</p>
+                  </Link>
                   <button onClick={() => deleteComment(comment._id)}>X</button>
+                  </div>
+                  <p>{comment.content}</p>
+                  
                 </div>
               );
             })}
+         </div>
             <form onSubmit={handleCommentSubmit} method="post">
               <label htmlFor="addComment">New Comment</label>
               <input
@@ -111,7 +123,7 @@ console.log(postDetail)
                 onChange={(e) => setContent(e.target.value)}
               />
 
-              <button type="submit">▶</button>
+              <button id='deletebtn'type="submit">Send ✔</button>
             </form>  
         </>
       )}

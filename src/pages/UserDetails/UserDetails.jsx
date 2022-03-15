@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import {useParams, useNavigate } from 'react-router-dom';
+import './UserDetails.css'
+import Rating from '../../components/Rating/Rating';
 
 function UserDetails() {
   const  [user, setUser] = useState([])
   const {id} = useParams();
+  const navigate = useNavigate();
 
   const fetchUsers = async () => {
     try {
@@ -25,12 +28,14 @@ function UserDetails() {
   
   return (
     <div className='scroll'>
-     <Link to={`/requests/${user._id}`}>User requests</Link>
-     <div>
-        <img src={user.image} style={{width:220, height:200}} alt="" /> 
-      <h2>{user.username}</h2> 
+      <div className='details'> 
+      <img src={user.image} style={{width:220, height:200}} alt="" /> 
      </div>
+     <div className='profile-btns'>
+        <button onClick={() => navigate(`/requests/${user._id}`)}>{user.username} requests</button>
+      </div>
       <hr />
+      <Rating></Rating>
     </div>
   )
 }

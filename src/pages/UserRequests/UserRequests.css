@@ -1,0 +1,10 @@
+.requests {
+   background-color: rgba(87, 118, 153, 0.349);
+    margin: 20px 40px;
+    margin-top: 20;
+    padding-left: 20px;
+    border-radius: 15px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+} 

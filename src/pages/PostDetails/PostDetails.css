@@ -1,0 +1,73 @@
+.postdetails {
+    padding: 10px;
+    margin: 3rem 0;
+    background-color: rgb(238, 238, 238);
+    text-align:start;
+}
+.post-d {
+    background-color: #ffffff;
+        margin: 20px 20px;
+        padding-left: 2em;
+        padding-bottom: 2em;
+        border-radius: 5px;
+        width: 90%;
+        height: auto;
+}
+
+.postdetails button{
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 700;
+    background: rgba(19, 61, 116, 0.5);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+  }
+  #deletebtn{
+     width: 20%;
+     height: 30px;
+     border-radius: 5px;
+  }
+  .postdetails button:hover{
+    opacity: 0.8;
+  }
+  .deletebtn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .deletebtn button {
+      margin-right: 20px;
+  }
+  .postdetails input{
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 20px;
+    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+    transition: box-shadow 0.2s ease-in;
+    padding: 2em;
+  }
+  
+  .postdetails input:focus{
+     box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
+     outline: none;
+  }
+  
+  .postdetails input::-webkit-input-placeholder{
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  
+  .postdetails input:hover::-webkit-input-placeholder,
+  .postdetails input:focus::-webkit-input-placeholder{
+    opacity: 0;
+  }
+  
+  .postdetails label{
+    align-self: start;
+    padding-bottom: 0.5rem;
+    color: rgba(65, 152, 192, 0.9);
+  }

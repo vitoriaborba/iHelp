@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import './UserRequests.css'
 
 function UserRequests() {
   const [UsersPosts, setUsersPosts] = useState([]);
@@ -36,7 +37,7 @@ function UserRequests() {
           <>
           {UsersPosts.posts.map((post)=> {
              return (
-               <div className='post' key={post._id}>
+               <div className='requests' key={post._id}>
               <input type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} />
               <div className='description'>
                 {post.image && (
@@ -58,15 +59,14 @@ function UserRequests() {
           })}          
           </>
         )}
-        <hr />
         <h3>Completed</h3>
         {UsersPosts.postsCompleted && (
           <>
           {UsersPosts.postsCompleted.map((post)=> {
              return (
-               <div className='post' key={post._id}>
+               <div className='requests' key={post._id}>
               <input type="checkbox" name="isDone" value={post.isDone} checked={true} onChange={handleDoneInput} />
-              <div>
+              <div className='description'>
                 {post.image && (
                  <img src={post.image} alt="" /> 
                 )} 

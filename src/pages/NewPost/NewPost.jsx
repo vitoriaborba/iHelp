@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth.context';
+import { MdAddAPhoto } from 'react-icons/md'
+import './NewPost.css'
 
 function NewPost() {
   const [locationInput, setLocationInput] = useState('');
@@ -59,15 +61,14 @@ function NewPost() {
   }
 
   return (
-    <div>
-       
-      <form onSubmit={handlePostSubmit} method='post'>
-
+    <div className='newpost scroll'>
+      <h1 id="headerTitle">New Post</h1>
+        <form onSubmit={handlePostSubmit} method='post'>
         <Select options={locationOptions} />
-
-        <input type="file" id="image_input" accept="image/png, image/jpg"/>
+        <input type="file" id="file-upload" accept="image/png, image/jpg"/>
 
         <label htmlFor="description">Description:</label>
+        <div className='flex-btn'>
         <input
           type="text"
           maxLength='280'
@@ -75,7 +76,17 @@ function NewPost() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-         <button type="submit">Publish</button>
+        <div className='btn'>
+         <label htmlFor="file-upload" class="custom-file-upload">
+        <MdAddAPhoto 
+        size='40'
+        color='rgb(37, 94, 148)'
+        />
+        </label> 
+        <button type="submit">Publish ✔</button>
+        </div>
+         
+        </div>
       </form>
 
     </div>

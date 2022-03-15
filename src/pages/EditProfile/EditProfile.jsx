@@ -1,11 +1,11 @@
 import { useState, useContext} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../context/auth.context";
  
 function EditProfile(props) {
   const [username, setUsername] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [setErrorMessage] = useState(undefined);
   const { user } = useContext(AuthContext);
  
   const navigate = useNavigate();
@@ -38,21 +38,21 @@ function EditProfile(props) {
       <h1 id="headerTitle">Edit Profile</h1>
       <div>
 
-      <form onSubmit={handleEdit}>
-      <input type="file" id="image_input" accept="image/png, image/jpg"/>
-      <div className="row">
-        <label>Username:</label>
-        <input 
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleUsername}
-        />
- </div>
- <div id="button" className="row">
-        <button type="submit">Save</button>
+        <form onSubmit={handleEdit}>
+        <input type="file" id="image_input" accept="image/png, image/jpg"/>
+        <div className="row">
+          <label>Username:</label>
+          <input 
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleUsername}
+          />
         </div>
-      </form>
+        <div id="button" className="row">
+          <button type="submit">Save</button>
+          </div>
+        </form>
 
  </div>
     </div>

@@ -1,3 +1,6 @@
+body{
+    background-color: rgb(238, 238, 238);
+}
 .userinfo {
     display: flex;
     justify-content:flex-start;
@@ -5,7 +8,10 @@
     padding: 10px 0;
 }
 .users {
- padding: 15px;
+    display: grid;
+    grid-template-columns: 15px 15px 15px;
+    grid-template-rows: 5px 5px;
+    grid-gap: 20px;
 }
 .searchUser {
     display: flex;
@@ -18,8 +24,8 @@
 }
 .container {
     padding: 10px;
-    margin: 5rem 0;
-    background-color: #ffffff;
+    margin: 3rem 0;
+    background-color: rgb(238, 238, 238);
     text-align:start;
 }
 .search {   
@@ -33,23 +39,24 @@
     margin: 100px auto;
     background-color: #ffffff;
     border-radius: 25px;
+    
 }
 .comments {
     padding-bottom: 20px;
 }
-/* .post {
-    border: 1px solid rgba(163, 163, 163, 0.432);
-    margin: 20px 40px;
-    margin-top: 20;
-    padding-left: 20px;
-    border-radius: 25px;
-    width: 80%;
-    display: flex;
-    align-items: center;
+.post {
+    background-color: #ffffff;
+    margin: 20px 20px;
+    padding-left: 2em;
+    border-radius: 5px;
+    width: 90%;
+    height: auto;
+
 } 
-.post article {
-   
-} */
+h6 {
+    padding: 1em 0;
+    color: rgb(46, 89, 155);
+}
 .description {
     margin: 20px;
 }
@@ -95,7 +102,7 @@ h3 {
     justify-content: space-between;
     position: fixed;
     width: 100vw;
-    height: 6vh;
+    height:7vh;
     background-color: white;
     padding-right: 20px;
     padding-top: 10px;
@@ -107,7 +114,8 @@ h3 {
 .scroll {
     margin: 5rem 0;
 }
-
-#nav:active {
-    color: rgb(37, 94, 148);
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
