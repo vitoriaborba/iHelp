@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth.context';
 
-function HelpDetails() {
+function PostDetails() {
   const [postDetail, setPostDetail] = useState(null);
   const {postId} = useParams();
   const [content, setContent] = useState('')
@@ -103,14 +103,15 @@ console.log(postDetail)
             })}
             <form onSubmit={handleCommentSubmit} method="post">
               <label htmlFor="addComment">New Comment</label>
-              <textarea
+              <input
                 type="text"
                 name="content"
+                maxLength='100'
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
 
-              <button type="submit">Send</button>
+              <button type="submit">▶</button>
             </form>  
         </>
       )}
@@ -119,4 +120,4 @@ console.log(postDetail)
   )
 }
 
-export default HelpDetails
+export default PostDetails

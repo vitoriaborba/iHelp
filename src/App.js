@@ -7,16 +7,16 @@ import IsAnon from './components/IsAnon/IsAnon';
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import NavBar from './components/NavBar/NavBar';
 
-import CommunityPage from './pages/CommunityPage/CommunityPage';
+import CommunityPage from './pages/Community/Community';
 import EditProfile from './pages/EditProfile/EditProfile';
-import HelpDetails from './pages/HelpDetails/HelpDetails';
+import PostDetails from './pages/PostDetails/PostDetails';
 import HomePage from './pages/HomePage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import NeedHelpPage from './pages/NeedHelpPage/NeedHelpPage';
+import NewPost from './pages/NewPost/NewPost';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import UserRequests from './pages/UserRequests/UserRequests';
-import WantToHelpPage from './pages/WantToHelpPage/WantToHelpPage';
+import Feed from './pages/Feed/Feed';
 import UserDetails from './pages/UserDetails/UserDetails';
 import Logo from './components/Logo/Logo';
 
@@ -27,10 +27,7 @@ function App() {
     <div className='flex' >
       <Logo></Logo>
     <Routes>
- 
       <Route path="/" element= {<HomePage />} />
-
-
       <Route path="/login" element= {
       <IsAnon>
       <LoginPage />
@@ -75,19 +72,19 @@ function App() {
       />
       <Route path="/post-create" element= {
         <IsPrivate>
-      <NeedHelpPage/>
+      <NewPost/>
       </IsPrivate>
     } 
       />
       <Route path="/feed" element= {
          <IsPrivate>
-           <WantToHelpPage/>
+           <Feed/>
          </IsPrivate>
     } 
       />
       <Route path="/feed/:postId" element= {
         <IsPrivate>
-      <HelpDetails/>
+      <PostDetails/>
       </IsPrivate>
     } 
       />

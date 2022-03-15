@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { AuthContext } from '../../context/auth.context'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 import {FaHandsHelping} from 'react-icons/fa'
 import { CgProfile } from 'react-icons/cg';
@@ -19,7 +19,6 @@ function NavBar(props) {
 <>
     <div className='bottom-nav'>
             <div className='bn-tab'>
-
                     <FaHandsHelping
                         type="checkbox" 
                         id="nav"
