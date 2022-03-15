@@ -58,7 +58,7 @@ function NeedHelpPage() {
   return (
     <div>
        
-      <form onSubmit={handlePostSubmit}>
+      <form onSubmit={handlePostSubmit} method='post'>
 
         <Select options={locationOptions} />
 

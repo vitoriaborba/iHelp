@@ -49,6 +49,15 @@ function HelpDetails() {
       .catch((err) => console.log(err));
 
   }
+  const deleteComment = () => {
+    const storedToken = localStorage.getItem('authToken');
+
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/post/`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then (()=> navigate(`/feed/${postId}`))
+  }
 
   return (
     <div>
@@ -74,14 +83,13 @@ function HelpDetails() {
                   <h6>{comment.author.username}</h6>
                   </div>
                   <p>{comment.content}</p>
+                  <button onClick={deleteComment}>X</button>
                 </div>
               );
             })}
             <form onSubmit={handlePostSubmit} method="post">
               <label htmlFor="addComment">New Comment</label>
-            {/*   <textarea name='content' cols='30' rows='2'></textarea>
- */}
-              <input
+              <textarea
                 type="text"
                 name="content"
                 value={content}
