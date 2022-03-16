@@ -8,13 +8,12 @@ import { MdAddAPhoto } from 'react-icons/md'
 import './NewPost.css'
 
 function NewPost() {
-  const [locationInput, setLocationInput] = useState('');
-  const [getLocation, setGetLocation] = useState('');
+  const [locationInput, setLocationInput] = useState([]);
   const [description, setDescription] = useState('');
   const [image, setImage] = useState(null);
+  const [location, setLocation] = useState("")
 
   const { user } = useContext(AuthContext);
-
 
   const navigate = useNavigate();
   
@@ -29,7 +28,7 @@ function NewPost() {
       .catch((err) => {
         console.log(err);
       });
-  }, [getLocation]);
+  }, []);
 
   if(locationInput) {
       locationInput.forEach((location) => {
@@ -41,7 +40,8 @@ function NewPost() {
   const handlePostSubmit = (e) => {
     e.preventDefault();
 
-    const body = {locationOptions, description, image, user };
+    const body = {location, description, image, user };
+
     const storedToken = localStorage.getItem('authToken');
     console.log(body)
     axios
@@ -60,9 +60,19 @@ function NewPost() {
 
   return (
     <div className='newpost scroll'>
+      
       <h1 id="headerTitle">New Post</h1>
         <form onSubmit={handlePostSubmit} method='post'>
-        <Select options={locationOptions} />
+        {/* <Select options={locationOptions} value={location} onChange={(e) => setLocation(e.target.locationOptions.value)} /> */}
+
+        <select name="location" value={location} onChange={(e) => setLocation(e.target.value)}>
+          {locationInput.map((element) => {
+              return(
+                <option key={element} value={element}>{element}</option>
+              )
+          })}
+        </select>
+
         <input type="file" id="file-upload" accept="image/png, image/jpg"/>
 
         <label htmlFor="description">Description:</label>
@@ -86,9 +96,8 @@ function NewPost() {
          
         </div>
       </form>
-
+     
     </div>
   );
 }
 export default NewPost
-

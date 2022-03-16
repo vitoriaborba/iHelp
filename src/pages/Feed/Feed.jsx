@@ -35,10 +35,11 @@ function Feed() {
               <div className='userinfo'>
               <img src={post.author.image} style={{width:25, height:20}} alt="" />
               <h6>{post.author.username}</h6>
+              <p>{post.location}</p>
               </div>
             </Link>}
             {post.image && (
-             <img src={post.image} alt="" /> 
+             <img src={post.image} style={{width:200}} alt="" /> 
             )} 
             <div className='comments'>
               <article>{post.description}</article>
