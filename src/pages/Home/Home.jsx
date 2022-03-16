@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 
 
-function HomePage() {
+function Home() {
 
   const [about, setAbout] = useState('');
   const [showAbout, setShowAbout] = useState(true);
