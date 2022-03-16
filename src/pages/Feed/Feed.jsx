@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Feed() {
   const [posts, setPosts] = useState([]);
   const storedToken = localStorage.getItem('authToken');
-
+ 
   const fetchPosts = async () => {
     try {
       let response = await axios.get(`${process.env.REACT_APP_API_URL}/feed`, {

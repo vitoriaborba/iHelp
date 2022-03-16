@@ -11,7 +11,7 @@ body{
     display: grid;
     grid-template-columns: 15px 15px 15px;
     grid-template-rows: 5px 5px;
-    grid-gap: 20px;
+    
 }
 .searchUser {
     display: flex;
@@ -31,16 +31,12 @@ body{
 .search {   
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 500px;
-    min-width: 300px;
-    max-height: 700px;
-    width: 30%;
-    height: 60%;
-    margin: 2em auto;
-    border-radius: 25px;
-    
+    align-items:flex-start;
+    padding-top: 2vh;
+    width: 100vw;
+    min-height: 15vh;
+    height: auto;
+    background-color: #ffffff;
 }
 
 .search .text-link {
@@ -89,7 +85,7 @@ h3 {
 
 }
 .searchPage input {
-    width: 100%;
+    /* width: 100%;
     box-sizing: border-box;
     border: none;
     font-size: 1.3rem;
@@ -97,25 +93,38 @@ h3 {
     padding-bottom: 1rem;
     box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
     transition: box-shadow 0.2s ease-in;
-    margin-right: 20;
+    margin-right: 20; */
 }
 
 .searchPage {
-   padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   margin-top: 1vh;
+}
+.searchbar {
+    margin-top: -5vh;
 }
 .logo { 
     display: flex;
     justify-content: space-between;
-    position: fixed;
     width: 100vw;
     height:7vh;
     background-color: white;
     padding-right: 20px;
     padding-top: 10px;
+    z-index: 2;
+}
+.logo-div {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+
 }
 .flex {
     display: flex;
     flex-direction: column;
+    
 }
 .scroll {
     margin: 5rem 0;
