@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 function Home() {
 
   const [about, setAbout] = useState('');
-  const [showAbout, setShowAbout] = useState(true);
+  const [showAbout, setShowAbout] = useState(false);
 
 
   const toggleShow = () => {
@@ -15,7 +15,7 @@ function Home() {
   };
 
 
-function Home() {
+
   return (
     <div className='homepage'>
       <div className='image'>
@@ -39,5 +39,5 @@ function Home() {
     
   )
 }
-}
+
 export default Home
