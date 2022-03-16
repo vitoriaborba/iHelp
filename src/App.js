@@ -10,7 +10,7 @@ import NavBar from './components/NavBar/NavBar';
 import CommunityPage from './pages/Community/Community';
 import EditProfile from './pages/EditProfile/EditProfile';
 import PostDetails from './pages/PostDetails/PostDetails';
-import HomePage from './pages/HomePage/HomePage';
+import Home from './pages/Home/Home';
 import LoginPage from './pages/LoginPage/LoginPage';
 import NewPost from './pages/NewPost/NewPost';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
@@ -27,7 +27,7 @@ function App() {
     <div className='flex' >
       <Logo></Logo>
     <Routes>
-      <Route path="/" element= {<HomePage />} />
+      <Route path="/" element= {<Home/>} />
       <Route path="/login" element= {
       <IsAnon>
       <LoginPage />

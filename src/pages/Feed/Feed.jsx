@@ -18,6 +18,7 @@ function Feed() {
     }
   };
   console.log(posts)
+ 
 
   useEffect(() => {
     fetchPosts();

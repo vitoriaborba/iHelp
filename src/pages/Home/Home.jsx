@@ -15,6 +15,7 @@ function HomePage() {
   };
 
 
+function Home() {
   return (
     <div className='homepage'>
       <div className='image'>
@@ -38,5 +39,5 @@ function HomePage() {
     
   )
 }
-
-export default HomePage
+}
+export default Home
