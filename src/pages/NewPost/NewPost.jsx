@@ -43,9 +43,7 @@ function NewPost() {
 
     const body = {locationOptions, description, image, user };
     const storedToken = localStorage.getItem('authToken');
-
     console.log(body)
-
     axios
       .post(`${process.env.REACT_APP_API_URL}/post-create/`, body, {
         headers: { Authorization: `Bearer ${storedToken}` },

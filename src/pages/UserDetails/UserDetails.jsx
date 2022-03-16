@@ -21,7 +21,6 @@ function UserDetails() {
       console.log(error);
     }
   };
-  console.log(user)
   useEffect(() => {
     fetchUsers();
   }, []);

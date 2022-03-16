@@ -13,7 +13,6 @@ function PostDetails() {
   const [isUpdated, setIsUpdated] = useState(true)
 
   const deleteComment = (commentId) => {
-    console.log(commentId)
     const storedToken = localStorage.getItem('authToken');
 
     axios
@@ -47,7 +46,6 @@ function PostDetails() {
     }
   };
 
-  console.log(postDetail)
 
 
   useEffect(() => {
@@ -73,7 +71,6 @@ function PostDetails() {
       .catch((err) => console.log(err));
 
   }
-console.log(postDetail)
   return (
     <div className='postdetails scroll'>
       {postDetail && (

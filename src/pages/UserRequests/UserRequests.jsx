@@ -18,13 +18,10 @@ function UserRequests() {
     try {
       const storedToken = localStorage.getItem('authToken');
 
-      console.log(user._id + ' ' + userId) 
-
 
       let response = await axios.get(`${process.env.REACT_APP_API_URL}/requests/${userId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
-      console.log(response.data)
       setUsersPosts(response.data);
       
     } catch (error) {
@@ -45,9 +42,6 @@ function UserRequests() {
 
   const handleDoneInput = ((e) => {
     // setisDone(e.target.checked)
-    console.log(e.target.checked)
-
-    console.log(e.target.id);
     let body = {
       "isDone": e.target.checked
     }
@@ -76,7 +70,6 @@ function UserRequests() {
         {UsersPosts.posts && (
           <>
           {UsersPosts.posts.map((post)=> {
-            console.log(post.isDone)
 
             if(user._id === userId){
               return (
@@ -131,7 +124,6 @@ function UserRequests() {
         {UsersPosts.postsCompleted && (
           <>
           {UsersPosts.postsCompleted.map((post)=> {
-            console.log(post.isDone)
 
             if(user._id === userId){
             

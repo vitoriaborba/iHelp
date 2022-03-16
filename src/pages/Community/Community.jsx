@@ -19,7 +19,6 @@ function Community() {
       console.log(error);
     }
   };
-  console.log(users)
   useEffect(() => {
     fetchUsers();
   }, []);
