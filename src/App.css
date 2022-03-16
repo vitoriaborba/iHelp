@@ -31,15 +31,21 @@ body{
 .search {   
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     max-width: 500px;
     min-width: 300px;
     max-height: 700px;
     width: 30%;
     height: 60%;
-    margin: 100px auto;
-    background-color: #ffffff;
+    margin: 2em auto;
     border-radius: 25px;
     
+}
+
+.search .text-link {
+margin-left: 2.5em;
+
 }
 .comments {
     padding-bottom: 20px;
