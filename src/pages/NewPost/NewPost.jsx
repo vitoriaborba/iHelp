@@ -59,7 +59,7 @@ function NewPost() {
   }
 
   return (
-    <div className='newpost'>
+    <div className='newpost-form'>
         <form onSubmit={handlePostSubmit} method='post'>
         {/* <Select options={locationOptions} value={location} onChange={(e) => setLocation(e.target.locationOptions.value)} /> */}
 

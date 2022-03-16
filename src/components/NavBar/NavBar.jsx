@@ -22,9 +22,11 @@ function NavBar() {
     <>
 {loggedIn && (
 <div className='newpost'> 
-{showForm && 
+<div>
+  {showForm && 
             <NewPost></NewPost>
             }
+</div>
     <div className='bottom-nav'>
    
             <div className='bn-tab'>

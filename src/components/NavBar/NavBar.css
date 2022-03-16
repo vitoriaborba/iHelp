@@ -13,7 +13,6 @@
     align-items: center;
     position:fixed;
     bottom: 0;
-    margin-left: 9.5em;
     border-top: 1px solid rgb(230, 230, 230);
   }
   .bn-tab {
@@ -23,12 +22,9 @@
     justify-content: center;
     align-items: center;
   }
-  .newpost {
-    position: fixed;
-    margin-left: 7em;
-  }
-  .newpost form {
-    margin-left: 24em;
-    margin-top: -28em;
-
-  }
+.newpost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
