@@ -3,9 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import './SignupPage.css'
  
-const API_URL = "http://localhost:5005";
- 
- 
+
 function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,11 +21,14 @@ function SignupPage(props) {
     e.preventDefault();
     // Create an object representing the request body
     const requestBody = { email, password, username };
- 
+    const storedToken = localStorage.getItem('authToken');
     // Make an axios request to the API
     // If POST request is successful redirect to login page
     // If the request resolves with an error, set the error message in the state
-    axios.post(`${API_URL}/signup`, requestBody)
+    axios
+    .post(`${process.env.REACT_APP_API_URL}/signup/`, requestBody, {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    })
       .then((response) => {
         navigate('/login');
       })

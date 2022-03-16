@@ -20,8 +20,12 @@ function LoginPage(props) {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     const requestBody = { username, password };
+    const storedToken = localStorage.getItem('authToken');
+
  
-    axios.post(`${process.env.REACT_APP_API_URL}/login`, requestBody)
+    axios.post(`${process.env.REACT_APP_API_URL}/login`, requestBody, {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    })
       .then((response) => {
         
       // Request to the server's endpoint `/auth/login` returns a response
