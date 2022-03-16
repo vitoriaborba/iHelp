@@ -12,6 +12,7 @@ function UserRequests() {
   const [postsCompleted, setPostsCompleted] = useState('');
   const { user } = useContext(AuthContext);
 
+  
   const navigate = useNavigate();
 
   const fetchPosts = async () => {
