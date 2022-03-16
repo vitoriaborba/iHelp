@@ -11,7 +11,6 @@ function UserRequests() {
   const {userId} = useParams();
   const [postsCompleted, setPostsCompleted] = useState('');
   const { user } = useContext(AuthContext);
-
   
   const navigate = useNavigate();
 
