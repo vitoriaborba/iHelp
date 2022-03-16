@@ -34,7 +34,7 @@ function UserRequests() {
 
   useEffect(() => {
     fetchPosts();
-    setisDone(true)
+    setisDone(false)
   }, [postsCompleted, isDone]);
 
   // useEffect(() => {
@@ -63,8 +63,7 @@ function UserRequests() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-
-      console.log(response)
+       setisDone(true)
         navigate(`/requests/${userId}`);
       })
       .catch((err) => console.log(err)) 
