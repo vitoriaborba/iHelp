@@ -3,9 +3,27 @@ body{
 }
 .userinfo {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.userinfo p {
+    font-size: 12px;
+    margin: 0 3.5vw 0 0;
+    padding-bottom: 2vw;
+    font-weight: 700;
+    color: rgb(80, 111, 143)
+}
+.location {
+    display: flex;
+}
+.user-div {
+    display: flex;
     justify-content:flex-start;
     align-items:center;
     padding: 10px 0;
+}
+.user-div h6 {
+    padding-left: 1vw;
 }
 .users {
     display: grid;

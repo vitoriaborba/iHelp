@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { MdLocationOn } from 'react-icons/md'
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -34,9 +35,18 @@ function Feed() {
           <div className='post' key={post._id}>
             {post.author && <Link className='text-link' to={`/user/${post.author._id}`}>
               <div className='userinfo'>
-              <img src={post.author.image} style={{width:25, height:20}} alt="" />
+                <div className='user-div'>
+                    <img src={post.author.image} style={{width:25, height:20}} alt="" />
               <h6>{post.author.username}</h6>
+                </div>
+                <div className='location'>
+                  <MdLocationOn
+                size='15'
+                color='rgb(81, 112, 143)'
+                />
               <p>{post.location}</p>
+                </div>
+                
               </div>
             </Link>}
             {post.image && (
