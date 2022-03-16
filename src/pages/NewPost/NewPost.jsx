@@ -59,9 +59,7 @@ function NewPost() {
   }
 
   return (
-    <div className='newpost scroll'>
-      
-      <h1 id="headerTitle">New Post</h1>
+    <div className='newpost'>
         <form onSubmit={handlePostSubmit} method='post'>
         {/* <Select options={locationOptions} value={location} onChange={(e) => setLocation(e.target.locationOptions.value)} /> */}
 
@@ -87,7 +85,7 @@ function NewPost() {
         <div className='btn'>
          <label htmlFor="file-upload" className="custom-file-upload">
         <MdAddAPhoto 
-        size='40'
+        size='30'
         color='rgb(37, 94, 148)'
         />
         </label> 
