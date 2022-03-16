@@ -85,7 +85,7 @@ function NewPost() {
           onChange={(e) => setDescription(e.target.value)}
         />
         <div className='btn'>
-         <label htmlFor="file-upload" class="custom-file-upload">
+         <label htmlFor="file-upload" className="custom-file-upload">
         <MdAddAPhoto 
         size='40'
         color='rgb(37, 94, 148)'
