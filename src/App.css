@@ -1,11 +1,65 @@
 body{
     background-color: rgb(238, 238, 238);
 }
+
+.post {
+    background-color: #ffffff;
+    margin: 20px 20px;
+    border-radius: 5px;
+    width: 90%;
+    border-radius: 5px;
+
+} 
+.meta {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1vh;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+.meta p {
+    font-size: 12px;
+    margin: 0 3.5vw 0 0;
+    font-weight: 700;
+    color: rgb(80, 111, 143)
+}
+.location {
+    display: flex;
+}
 .userinfo {
     display: flex;
     justify-content:flex-start;
     align-items:center;
-    padding: 10px 0;
+    padding: 10px 20px;
+}
+.userinfo h6 {
+    padding-left: 1vw;
+}
+.image-description {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.comments {
+    padding-bottom: 20px;
+}
+.comment-div {
+    display: flex;
+    flex-direction: column;
+    background-color: #dad8d893;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.comment-div p {
+    padding: 10px 20px;
+
+}
+.postinfo {
+    background-color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 5px;
+
 }
 .users {
     display: grid;
@@ -18,6 +72,11 @@ body{
     flex-direction: column;
     align-items: center;
 }
+.search-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .text-link {
     color: inherit;
     text-decoration: inherit;
@@ -25,12 +84,13 @@ body{
 .container {
     padding: 10px;
     margin: 3rem 0;
+    display: flex;
+    flex-direction: column-reverse;
     background-color: rgb(238, 238, 238);
     text-align:start;
 }
 .search {   
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     max-width: 500px;
@@ -40,6 +100,7 @@ body{
     height: 60%;
     margin: 2em auto;
     border-radius: 25px;
+    flex-wrap: wrap;
     
 }
 
@@ -47,18 +108,7 @@ body{
 margin-left: 2.5em;
 
 }
-.comments {
-    padding-bottom: 20px;
-}
-.post {
-    background-color: #ffffff;
-    margin: 20px 20px;
-    padding-left: 2em;
-    border-radius: 5px;
-    width: 90%;
-    height: auto;
 
-} 
 h6 {
     padding: 1em 0;
     color: rgb(46, 89, 155);
@@ -89,19 +139,21 @@ h3 {
 
 }
 .searchPage input {
-    width: 100%;
     box-sizing: border-box;
     border: none;
     font-size: 1.3rem;
-    padding-left: 1.5rem;
-    padding-bottom: 1rem;
+    padding: 0.5rem 3rem;
+    margin-left: 2em;
+    margin-right: 2em;
     box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
     transition: box-shadow 0.2s ease-in;
-    margin-right: 20;
 }
 
 .searchPage {
    padding-top: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 .logo { 
     display: flex;
@@ -113,9 +165,16 @@ h3 {
     padding-right: 20px;
     padding-top: 10px;
 }
+.logo-div {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+
+}
 .flex {
     display: flex;
     flex-direction: column;
+    
 }
 .scroll {
     margin: 5rem 0;
@@ -124,4 +183,70 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600&display=swap');
+
+/* DEMO-SPECIFIC STYLES */
+
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #75bd99 }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #75bd99 }
+}
+
+/* color pallete */
+.animate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.loader h1 {
+  border-right: .15em solid #75bd99; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  font-weight: 300;
+  
+
+
+}
+.loader h1:nth-child(1){
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  color: #000000;
+  -webkit-animation: 
+    type 2s steps(30, end),
+    blink-caret .4s step-end infinite;
+          animation: 
+    type 2s steps(30, end),
+    blink-caret .4s step-end infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes type {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes type {
+  from { width: 0 }
+  to { width: 100% }
+
+}
+
+.edit-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#file-upload{
+    display: none;
 }

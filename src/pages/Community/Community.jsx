@@ -32,16 +32,16 @@ function Community() {
 
   return (
     <div className='searchPage scroll'>
-      <h3>Search for Community Members:</h3>
+      <h3 style={{paddingBottom:10}} >Search for Community Members</h3>
   <Searchbar search={searchFilter} />
   <div className='search'>
     {users.map((user)=> {
     return (
-       <div className='users' key={user._id}>
+       <div key={user._id}>
        <Link className='text-link' to={`/user/${user._id}`}>
-              <div className='searchUser'>
-              <img src={user.image} style={{width:75, height:70}} alt="" />
-              <h6>{user.username}</h6>
+              <div className='search-user' >
+              <img src={user.image} style={{borderRadius:50, width:75, height:75}} alt="" />
+              <h6 style={{fontSize:15}}>{user.username}</h6>
               </div>
             </Link>
      </div>

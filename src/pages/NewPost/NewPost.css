@@ -1,85 +1,59 @@
-.newpost{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2rem;
-    max-width: 100%;
-    
-  }
-  
-  .newpost input{
-    width: 100%;
-    box-sizing: border-box;
-    border: none;
-    font-size: 20px;
-    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
-    transition: box-shadow 0.2s ease-in;
-    padding: 2em;
-  }
-  
-  .newpost input:focus{
-     box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
-     outline: none;
-  }
-  
-  .newpost input::-webkit-input-placeholder{
-    opacity: 1;
-    transition: opacity 0.25s ease-out;
-  }
-  
-  .newpost input:hover::-webkit-input-placeholder,
-  .newpost input:focus::-webkit-input-placeholder{
-    opacity: 0;
-  }
-  
-  .newpost label{
-    align-self: start;
-    padding-bottom: 0.5rem;
-    color: rgba(65, 152, 192, 0.9);
-  }
-  
-  .newpost button{
-    border-radius: 10px;
-    width: 45%;
-    height: 40px;
-    font-size: 1.3rem;
-    color: white;
-    font-weight: 700;
-    background: rgba(19, 61, 116, 0.5);
-    border: 0px;
-    cursor: pointer;
-    transition: opacity 0.25s ease-out;
-  }
-  
-  .newpost button:hover{
-    opacity: 0.8;
-  }
+.newpost-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vh 0 7vh 0 ;
+}
+.ask {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 7rem;
+}
+.ask h3{
+font-size: 2rem;
+margin-bottom: 1rem;
+} 
+.ask select{
+  font-size: 20px;
+  border: none;
+  margin-bottom: 1rem;
 
-  .flex-btn {
-      display: flex;
-      flex-direction: column;
-  }
-  .newpost form {
-      margin: 2em;
-  }
-  input[type="file"] {
-    display: none;
 }
-.custom-file-upload {
-    display: inline-block;
-    cursor: pointer;
+
+button{
+  border-radius: 5px;
+  width: 60%;
+  height: 30px;
+  font-size: 1em;
+  color: white;
+  font-weight: 700;
+  background: rgba(61, 118, 165, 0.336);
+  border: 0;
+  cursor: pointer;
+  margin-top: 1rem;
+
 }
-.btn {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 30px;
-}
-#headerTitle{
-    text-align: center;
+
+label{
+  text-align: center;
+    color: #999797ab;
     font-family: 'open sans', sans-serif;
-    padding: 2rem 0;
-    margin: 0;
-    font-size: 2rem;
-    color: rgba(65, 132, 187, 0.541);
-  }
-  
+    margin: 0.5rem 0;
+
+}
+div.btn{
+  display: flex;
+  justify-content: center;
+}
+.flex-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#newpost{
+  padding-bottom: 6rem;
+}
+

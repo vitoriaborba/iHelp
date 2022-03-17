@@ -37,14 +37,31 @@ function NewPost() {
       })
   }
 
-  const handlePostSubmit = (e) => {
+  const handlePostSubmit = async (e) => {
     e.preventDefault();
-
-    const body = {location, description, image, user };
-
+//IMG
     const storedToken = localStorage.getItem('authToken');
+
+    try{
+
+    
+    const uploadData = new FormData();
+      uploadData.append("image", image);
+
+      const upload = await axios.post(
+        `${process.env.REACT_APP_API_URL}/upload`,
+        uploadData,
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+    );
+
+
+
+    const body = {location, description, image: upload.data.fileUrl};
+
+  
+
     console.log(body)
-    axios
+    await axios
       .post(`${process.env.REACT_APP_API_URL}/post-create/`, body, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
@@ -54,17 +71,18 @@ function NewPost() {
         
         navigate(`/feed`);
       })
-      .catch((err) => console.log(err));
-
+    }
+      catch(error){
+        console.log(error)
+      }
   }
 
   return (
-    <div className='newpost scroll'>
-      
-      <h1 id="headerTitle">New Post</h1>
+    <div className='newpost-form scroll'>
+      <div className='ask'>
+        <h3>Ask For Help</h3>
         <form onSubmit={handlePostSubmit} method='post'>
-        {/* <Select options={locationOptions} value={location} onChange={(e) => setLocation(e.target.locationOptions.value)} /> */}
-
+        
         <select name="location" value={location} onChange={(e) => setLocation(e.target.value)}>
           {locationInput.map((element) => {
               return(
@@ -73,30 +91,35 @@ function NewPost() {
           })}
         </select>
 
-        <input type="file" id="file-upload" accept="image/png, image/jpg"/>
+    
+        <input type="file" id="file-upload" name='image' accept="image/png image/jpg" onChange={(e)=> setImage(e.target.files[0])}/>
 
-        <label htmlFor="description">Description:</label>
-        <div className='flex-btn'>
+
+        <div className='searchPage flex-btn'>
+        
         <input
+          id='newpost'
           type="text"
           maxLength='280'
           name="description"
+          placeholder='Your description here'
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <div className='btn'>
+        
          <label htmlFor="file-upload" className="custom-file-upload">
         <MdAddAPhoto 
-        size='40'
+        size='30'
         color='rgb(37, 94, 148)'
         />
         </label> 
-        <button type="submit">Publish ✔</button>
         </div>
-         
+         <button type="submit">Publish ✔</button>
         </div>
       </form>
-     
+      </div>
+          
     </div>
   );
 }
