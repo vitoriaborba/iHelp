@@ -3,13 +3,15 @@ body{
 }
 .userinfo {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    padding: 1vh;
+    margin-left: -8vw;
+    width:86vw;
+    background-color: aliceblue;
 }
 .userinfo p {
     font-size: 12px;
     margin: 0 3.5vw 0 0;
-    padding-bottom: 2vw;
     font-weight: 700;
     color: rgb(80, 111, 143)
 }

@@ -35,10 +35,8 @@ function Feed() {
           <div className='post' key={post._id}>
             {post.author && <Link className='text-link' to={`/user/${post.author._id}`}>
               <div className='userinfo'>
-                <div className='user-div'>
-                    <img src={post.author.image} style={{width:25, height:20}} alt="" />
-              <h6>{post.author.username}</h6>
-                </div>
+                <p>{post.updatedAt.split('T')[0]}</p>
+              <p>{post.updatedAt.split('T')[1].split('.')[0]}</p>
                 <div className='location'>
                   <MdLocationOn
                 size='15'
@@ -46,8 +44,11 @@ function Feed() {
                 />
               <p>{post.location}</p>
                 </div>
-                
               </div>
+               <div className='user-div'>
+                <img src={post.author.image} style={{width:25, height:20}} alt="" />
+              <h6>{post.author.username}</h6>
+                </div>
             </Link>}
             {post.image && (
              <img src={post.image} style={{width:200}} alt="" /> 

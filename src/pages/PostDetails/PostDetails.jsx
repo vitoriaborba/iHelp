@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth.context';
 import './PostDetails.css'
+import { MdLocationOn } from 'react-icons/md'
+
 
 function PostDetails() {
   const [postDetail, setPostDetail] = useState(null);
@@ -76,14 +78,28 @@ function PostDetails() {
       {postDetail && (
         <>  
         <div className='post-d'>
+        <div className='userinfo'>
+                <p>{postDetail.updatedAt.split('T')[0]}</p>
+              <p>{postDetail.updatedAt.split('T')[1].split('.')[0]}</p>
+                <div className='location'>
+                  <MdLocationOn
+                size='15'
+                color='rgb(81, 112, 143)'
+                />
+              <p>{postDetail.location}</p>
+                </div>
+              </div>
           <div className='deletebtn'>
              <Link to={`/user/${postDetail.author._id}`}>
-            <div className='userinfo'>
+            <div className='user-div'>
             <img src={postDetail.author.image} style={{width:25, height:20}} alt="" />
             <h6>{postDetail.author.username}</h6>
             </div>
           </Link> 
-          <button onClick={deletePost}>X</button>
+          {user.username === postDetail.author.username && (
+            <button onClick={deletePost}>X</button>
+            )}
+          
           </div>
             {postDetail.image && (
              <img src={postDetail.image} alt="" /> 
@@ -97,12 +113,14 @@ function PostDetails() {
                 <div key={comment._id}>
                   <div className='deletebtn'>
                    <Link to={`/user/${postDetail.author._id}`}>
-                  <div className='userinfo'>
+                  <div className='user-div'>
                   <img src={postDetail.author.image} style={{width:25, height:20}} alt="" />
                   <h6>{comment.author.username}</h6>
                   </div>
                   </Link>
-                  <button onClick={() => deleteComment(comment._id)}>X</button>
+                  {user.username === comment.author.username && (
+                    <button onClick={() => deleteComment(comment._id)}>X</button>
+                  )}  
                   </div>
                   <p>{comment.content}</p>
                   
