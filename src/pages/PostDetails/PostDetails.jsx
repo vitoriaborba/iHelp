@@ -101,7 +101,7 @@ function PostDetails() {
             <div className='postinfo'>
               <div className='image-description'>
                 {postDetail.image && (
-             <img src={postDetail.image} style={{maxWidth: 300, borderRadius:5}}alt="" /> 
+             <img src={postDetail.image} style={{maxWidth:300, borderRadius:5}}alt="" /> 
             )}  
             <article>{postDetail.description}</article>
               </div>
@@ -112,7 +112,7 @@ function PostDetails() {
                   <div className='deletebtn'>
                     <div >
                    <Link className='text-link userinfo' to={`/user/${postDetail.author._id}`}>
-                  <img src={postDetail.author.image} style={{borderRadius:50, width:30, height:30}} alt="" />
+                  <img src={comment.author.image} style={{borderRadius:50, width:30, height:30}} alt="" />
                   <h6>{comment.author.username}</h6> <h6 style={{color:'rgb(146, 154, 161)'}}>{moment(comment.createdAt).fromNow()}</h6>
                   </Link> 
                   

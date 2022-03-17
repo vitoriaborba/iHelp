@@ -32,7 +32,7 @@ function NavBar(props) {
                         type="checkbox" 
                         id="nav"
                         size='35'
-                        color='rgb(37, 94, 148)'
+                        color='#6AAC8B'
                         onClick={() => navigate('/post-create')}
                     />
             </div>

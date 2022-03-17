@@ -106,16 +106,16 @@ function NewPost() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <div className='btn'>
+        <div className='profile-btns'>
         
          <label htmlFor="file-upload" className="custom-file-upload">
         <MdAddAPhoto 
         size='30'
-        color='rgb(37, 94, 148)'
+        color='#6d358d97'
         />
         </label> 
         </div>
-         <button type="submit">Publish ✔</button>
+         <button id='test' type="submit">Publish ✔</button>
         </div>
       </form>
       </div>

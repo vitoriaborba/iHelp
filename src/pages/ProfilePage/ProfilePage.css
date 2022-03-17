@@ -1,22 +1,22 @@
 
-.profile-btns button {
+.profile-btn button {
     border-radius: 15px;
     width: 40%;
     height: 40px;
     font-size: 1em;
     color: white;
-    
     font-weight: 700;
-    background: rgba(121, 139, 155, 0.336);
     border: 0;
     cursor: pointer;
+    background: #ae8bc254;
    
 }
-.profile-btns {
+.profile-btn {
     display: flex;
     align-items: center;
     justify-content: space-around; 
     padding: 10px;
+    
 }
 .details {
     display: flex;

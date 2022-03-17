@@ -72,7 +72,7 @@ function EditProfile(props) {
        <label htmlFor="file-upload" class="custom-file-upload">
         <MdAddAPhoto 
         size='40'
-        color='rgb(37, 94, 148)'
+        color='#6d358d97'
         />
         </label> 
      </div>

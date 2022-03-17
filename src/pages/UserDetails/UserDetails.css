@@ -6,7 +6,7 @@
     font-size: 1em;
     color: white;
     font-weight: 700;
-    background: rgba(61, 118, 165, 0.336);
+    background: linear-gradient(90deg, #7bc5a0 0%, #d3a8ec 100%);
     border: 0;
     cursor: pointer;
    

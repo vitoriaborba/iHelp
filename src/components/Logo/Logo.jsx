@@ -6,12 +6,12 @@ function Logo() {
   const navigate = useNavigate()
   return (
     <div className="logo">
-         <img  style={{width:30, marginLeft:20}}src="https://images.pling.com/img/00/00/52/78/02/1292217/125ac9300428bfa3aa0ec3da27361d679aad.png" alt="" />
+         <img style={{maxWidth:150}}src="https://res.cloudinary.com/vitoria/image/upload/v1647542300/movie-gallery/logo_ub3eh0.png" alt="" />
          <BiSearchAlt
           type="checkbox" 
           id="nav"
           size='35'
-          color='#BDBCBC'
+          color='white'
           onClick={() => navigate('/users')}
           />
     </div>
