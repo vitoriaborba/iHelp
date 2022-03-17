@@ -25,9 +25,9 @@ function Home() {
     
       <button onClick={toggleShow}>{showAbout ? 'About' : 'About'}</button>
       {showAbout && (
-        <>
-        <h3>iHelp is a community made to help whoever is in need.</h3>
-        </>
+       <div className='about'>
+       <h3>iHelp is a community created by Filipa Natalio & Vitoria Borba. Made to help whoever is in need, without asking anything in return.</h3>
+       </div>
       )}
 
 

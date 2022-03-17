@@ -32,7 +32,7 @@ function ProfilePage() {
     {user && (
       <>
       <div className='details'> 
-      <img src={user.image} style={{width:220, height:220, borderRadius:50, marginBottom:20}} alt="" />
+      <img src={user.image} style={{width:210, borderRadius:10, marginBottom:20}} alt="" />
       <div class="animate">
       <div class="loader" >
       <h1 class="color-palette-title">Welcome, {user.username}</h1>
