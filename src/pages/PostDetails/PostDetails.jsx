@@ -101,7 +101,7 @@ function PostDetails() {
             <div className='postinfo'>
               <div className='image-description'>
                 {postDetail.image && (
-             <img src={postDetail.image} style={{borderRadius:5}}alt="" /> 
+             <img src={postDetail.image} style={{maxWidth:300, borderRadius:5}}alt="" /> 
             )}  
             <article>{postDetail.description}</article>
               </div>

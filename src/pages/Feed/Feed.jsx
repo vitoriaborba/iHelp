@@ -57,7 +57,7 @@ function Feed() {
             <div className='postinfo'>
               <div className='image-description'>
                 {post.image && (
-             <img src={post.image} style={{maxWidth: 100,borderRadius:5}}alt="" /> 
+             <img src={post.image} style={{maxWidth: 300,borderRadius:5}}alt="" /> 
             )}  
             <article>{post.description}</article>
               </div>

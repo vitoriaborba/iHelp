@@ -19,7 +19,7 @@ function Home() {
   return (
     <div className='homepage'>
       <div className='image'>
-        <img style={{width:400}}src="https://images.pling.com/img/00/00/52/78/02/1292217/125ac9300428bfa3aa0ec3da27361d679aad.png" alt="" />
+      <img style={{width:450}}src="https://res.cloudinary.com/vitoria/image/upload/v1647544677/movie-gallery/iHelp_3_ih68ws.png" alt="" />
       </div>
       <div className='row'>
     

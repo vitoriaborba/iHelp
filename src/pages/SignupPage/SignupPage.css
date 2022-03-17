@@ -71,8 +71,8 @@ html{
     font-size: 1.3rem;
     color: white;
     font-weight: 700;
-    background: rgb(34,193,195);
-    background: linear-gradient(90deg, rgb(57, 117, 196) 0%,     rgb(151, 57, 240) 100%);
+    background: #22c1c3;
+    background: linear-gradient(90deg, #7bc5a0 0%, #d3a8ec 100%);
     border: 0px;
     cursor: pointer;
     transition: opacity 0.25s ease-out;

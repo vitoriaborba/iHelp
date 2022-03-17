@@ -136,6 +136,7 @@ h3 {
     padding-bottom: 5vh;
     display: flex;
     flex-direction: column;
+    padding-top: 10rem;
 
 }
 .searchPage input {
@@ -161,7 +162,8 @@ h3 {
     position: fixed;
     width: 100vw;
     height:7vh;
-    background-color: white;
+    background-color: #6aac8b;
+    align-items: center;
     padding-right: 20px;
     padding-top: 10px;
 }
@@ -170,6 +172,10 @@ h3 {
     flex-direction: row;
     position: fixed;
 
+}
+
+a {
+    color: #bbb9b9;
 }
 .flex {
     display: flex;
