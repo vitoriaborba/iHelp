@@ -94,25 +94,29 @@ function NewPost() {
     
         <input type="file" id="file-upload" name='image' accept="image/png, image/jpg" onChange={(e)=> setImage(e.target.files[0])} required/>
 
-        <label htmlFor="description">Description:</label>
-        <div className='flex-btn'>
+
+        <div className='searchPage flex-btn'>
+        
         <input
+          id='newpost'
           type="text"
           maxLength='280'
           name="description"
+          placeholder='Your description here'
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <div className='btn'>
+        
          <label htmlFor="file-upload" className="custom-file-upload">
         <MdAddAPhoto 
         size='30'
         color='rgb(37, 94, 148)'
         />
         </label> 
-        <button type="submit">Publish ✔</button>
+
         </div>
-         
+         <button type="submit">Publish ✔</button>
         </div>
       </form>
       </div>

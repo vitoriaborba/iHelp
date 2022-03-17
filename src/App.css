@@ -91,7 +91,6 @@ body{
 }
 .search {   
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     max-width: 500px;
@@ -101,6 +100,7 @@ body{
     height: 60%;
     margin: 2em auto;
     border-radius: 25px;
+    flex-wrap: wrap;
     
 }
 
