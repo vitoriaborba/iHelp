@@ -112,9 +112,6 @@ function UserRequests() {
                 } 
              
               <div className='description'>
-                {post.image && (
-                 <img src={post.image} alt="" /> 
-                )} 
                 <article>{post.description}</article>
     
                 <Link className='text-link' to={`/feed/${post._id}`}>
