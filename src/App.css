@@ -7,13 +7,15 @@ body{
     margin: 20px 20px;
     border-radius: 5px;
     width: 90%;
+    border-radius: 5px;
 
 } 
 .meta {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     padding: 1vh;
     background-color: aliceblue;
+    border-radius: 5px;
 }
 .meta p {
     font-size: 12px;
@@ -33,22 +35,44 @@ body{
 .userinfo h6 {
     padding-left: 1vw;
 }
+.image-description {
+    display: flex;
+    flex-direction: column;
+
+}
 
 .comments {
     padding-bottom: 20px;
 }
+.comment-div {
+    display: flex;
+    flex-direction: column;
+    background-color: #dad8d893;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.comment-div p {
+    padding: 10px 20px;
+
+}
 .postinfo {
     background-color: #ffffff;
     padding: 5px 20px;
-}
+    border-radius: 5px;
 
+}
 .users {
     display: grid;
     grid-template-columns: 15px 15px 15px;
     grid-template-rows: 5px 5px;
-    
+    grid-gap: 20px;
 }
 .searchUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-user {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,19 +83,25 @@ body{
 }
 .container {
     padding: 10px;
-    margin: 5rem 0;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column-reverse;
     background-color: rgb(238, 238, 238);
     text-align:start;
 }
 .search {   
     display: flex;
     flex-direction: row;
-    align-items:flex-start;
-    padding-top: 2vh;
-    width: 100vw;
-    min-height: 15vh;
-    height: auto;
-    background-color: #ffffff;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+    min-width: 300px;
+    max-height: 700px;
+    width: 30%;
+    height: 60%;
+    margin: 2em auto;
+    border-radius: 25px;
+    
 }
 
 .search .text-link {
@@ -109,36 +139,31 @@ h3 {
 
 }
 .searchPage input {
-    /* width: 100%;
     box-sizing: border-box;
     border: none;
     font-size: 1.3rem;
-    padding-left: 1.5rem;
-    padding-bottom: 1rem;
+    padding: 0.5rem 3rem;
+    margin-left: 2em;
+    margin-right: 2em;
     box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
     transition: box-shadow 0.2s ease-in;
-    margin-right: 20; */
 }
 
 .searchPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   margin-top: 1vh;
-}
-.searchbar {
-    margin-top: -5vh;
+   padding-top: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 .logo { 
     display: flex;
     justify-content: space-between;
+    position: fixed;
     width: 100vw;
     height:7vh;
     background-color: white;
     padding-right: 20px;
     padding-top: 10px;
-    z-index: 2;
-    position: fixed;
 }
 .logo-div {
     display: flex;
@@ -159,3 +184,60 @@ h3 {
     flex-direction: column;
     align-items: center;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600&display=swap');
+
+/* DEMO-SPECIFIC STYLES */
+
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #75bd99 }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #75bd99 }
+}
+
+/* color pallete */
+.animate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.loader h1 {
+  border-right: .15em solid #75bd99; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  font-weight: 300;
+  
+
+
+}
+.loader h1:nth-child(1){
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  color: #000000;
+  -webkit-animation: 
+    type 2s steps(30, end),
+    blink-caret .4s step-end infinite;
+          animation: 
+    type 2s steps(30, end),
+    blink-caret .4s step-end infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes type {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes type {
+  from { width: 0 }
+  to { width: 100% }
+
+}
+

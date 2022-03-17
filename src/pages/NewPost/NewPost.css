@@ -4,3 +4,9 @@
   align-items: center;
   padding: 3vh 0 7vh 0 ;
 }
+.ask {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

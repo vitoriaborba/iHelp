@@ -1,34 +1,23 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { AuthContext } from '../../context/auth.context'
-import { useNavigate } from 'react-router-dom'
-import NewPost from '../../pages/NewPost/NewPost'
-
+import { useNavigate, NavLink } from 'react-router-dom'
 
 import {FaHandsHelping} from 'react-icons/fa'
 import { CgProfile } from 'react-icons/cg';
 import { IoIosAddCircle } from 'react-icons/io'
 import './NavBar.css'
 
-function NavBar() {
+function NavBar(props) {
   const {loggedIn} = useContext(AuthContext);
   const navigate = useNavigate()
-  const [showForm, setShowForm] = useState(false)
 
-  const toggleShow = () => {
-    setShowForm(!showForm);
-    console.log(showForm);
-  };
   return (
+
+
     <>
 {loggedIn && (
-<div className='newpost'> 
-<div>
-  {showForm && 
-            <NewPost></NewPost>
-            }
-</div>
+<>
     <div className='bottom-nav'>
-   
             <div className='bn-tab'>
                     <FaHandsHelping
                         type="checkbox" 
@@ -44,7 +33,7 @@ function NavBar() {
                         id="nav"
                         size='35'
                         color='rgb(37, 94, 148)'
-                        onClick={toggleShow}
+                        onClick={() => navigate('/post-create')}
                     />
             </div>
             <div className='bn-tab'>
@@ -57,10 +46,8 @@ function NavBar() {
                     onClick={() => navigate('/user')}
                     /> 
             </div>
-            
         </div>
-       
-    </div>
+    </>
     )}
   </>
 /*     <div>
@@ -83,3 +70,6 @@ function NavBar() {
 }
 
 export default NavBar
+
+
+
