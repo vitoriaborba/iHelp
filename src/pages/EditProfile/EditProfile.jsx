@@ -18,7 +18,9 @@ function EditProfile(props) {
     e.preventDefault();
 
     const storedToken = localStorage.getItem('authToken');
-    const uploadData = new FormData();
+    
+    try {
+      const uploadData = new FormData();
       uploadData.append("image", image);
 
       const upload = await axios.post(
@@ -26,19 +28,20 @@ function EditProfile(props) {
           uploadData,
           { headers: { Authorization: `Bearer ${storedToken}` } }
       );
-
+      
   
-    const requestBody = {username, Image: upload.data.fileUrl};
-    axios.put(`${process.env.REACT_APP_API_URL}/user/${user._id}`, requestBody, {
+    const requestBody = {username, image: upload.data.fileUrl};
+  
+    const updatedUser = await axios.put(`${process.env.REACT_APP_API_URL}/user/${user._id}`, requestBody, {
       headers: { Authorization: `Bearer ${storedToken}` },
     })
-      .then((response) => {
-        navigate('/user');
-      })
-      .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
-      })
+    console.log(updatedUser)
+      navigate('/user');
+
+    }
+    catch(error) {
+      console.log(error)
+    }
   };
 
   
