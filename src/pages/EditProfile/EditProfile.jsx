@@ -66,18 +66,21 @@ function EditProfile(props) {
   return (
     <div id='container'>
     <div className="EditProfile" id="loginform">
-      <h1 id="headerTitle">Edit Profile</h1>
       
-      {info && 
-       <div>
-
-        <form onSubmit={handleEdit}>
-        <label htmlFor="file-upload" class="custom-file-upload">
+      <div className="edit-pic">
+      <h1 id="headerTitle">Edit Profile</h1>
+       <label htmlFor="file-upload" class="custom-file-upload">
         <MdAddAPhoto 
         size='40'
         color='rgb(37, 94, 148)'
         />
         </label> 
+     </div>
+      {info && 
+       <div>
+
+        <form onSubmit={handleEdit}>
+       
         <input type="file" id="file-upload" name='image' accept="image/png image/jpg" onChange={(e)=> setImage(e.target.files[0])}/>
         <div className="row">
           <label>Username:</label>
@@ -85,6 +88,7 @@ function EditProfile(props) {
             type="text"
             name="username"
             value={username}
+            placeholder={info.username}
             onChange={handleUsername}
           />
         </div>
