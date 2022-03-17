@@ -39,12 +39,12 @@ function ProfilePage() {
       </div> 
       </div>
     </div>
-      <div className='profile-btns'>
-        <button onClick={() => navigate(`/requests/${user._id}`)}>My requests</button>
+      <div className='profile-btn'>
+        <button onClick={() => navigate(`/requests/${user._id}`)}>My Requests</button>
         <button onClick={() => navigate(`/user/edit`)}>Edit Profile</button>
      <IoIosLogOut
         size='35'
-        color='#0568c5'
+        color='#6AAC8B'
         onClick={logoutUser}
       /> 
       </div>

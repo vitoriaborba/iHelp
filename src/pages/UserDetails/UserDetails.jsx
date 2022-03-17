@@ -31,9 +31,8 @@ function UserDetails() {
       <img src={user.image} style={{borderRadius:50, width:220, height:200}} alt="" /> 
      </div>
      <div className='profile-btns'>
-        <button onClick={() => navigate(`/requests/${user._id}`)}>{(user.username)} requests</button>
+        <button onClick={() => navigate(`/requests/${user._id}`)}>@ {(user.username)}'s requests</button>
       </div>
-      <hr />
       <Rating></Rating>
     </div>
   )

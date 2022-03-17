@@ -29,7 +29,8 @@ button{
   font-size: 1em;
   color: white;
   font-weight: 700;
-  background: rgba(61, 118, 165, 0.336);
+  background: #482f5654;
+
   border: 0;
   cursor: pointer;
   margin-top: 1rem;

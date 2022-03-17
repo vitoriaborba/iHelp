@@ -41,7 +41,7 @@ function Feed() {
               <div className='location'>
                   <MdLocationOn
                 size='15'
-                color='rgb(81, 112, 143)'
+                color='#697d74'
                 />
               <p>{post.location}</p>
                 </div>

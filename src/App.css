@@ -14,14 +14,14 @@ body{
     display: flex;
     justify-content: flex-start;
     padding: 1vh;
-    background-color: aliceblue;
-    border-radius: 5px;
+    background-color: #9ec5b265;
+    border-radius: 5px 5px 0 0;
 }
 .meta p {
     font-size: 12px;
     margin: 0 3.5vw 0 0;
     font-weight: 700;
-    color: rgb(80, 111, 143)
+    color: #697d74
 }
 .location {
     display: flex;
@@ -255,4 +255,8 @@ a {
 }
 #file-upload{
     display: none;
+}
+#test{
+    background: linear-gradient(90deg, #7bc5a0 0%, #d3a8ec 100%);
+
 }
