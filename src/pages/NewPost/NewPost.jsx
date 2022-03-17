@@ -110,7 +110,7 @@ function NewPost() {
         color='rgb(37, 94, 148)'
         />
         </label> 
-        <button type="submit">Publish ✔</button>
+        <button className='profile-btns' type="submit">Publish ✔</button>
         </div>
          
         </div>

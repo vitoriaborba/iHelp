@@ -72,14 +72,13 @@ function UserRequests() {
           <>
           {UsersPosts.posts.map((post)=> {
 
-            if(user._id === userId){
               return (
                <div className='requests' key={post._id}>
-              <input id={post._id} type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} />
+                 {(user._id === userId) && 
+                 <input id={post._id} type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} />
+                  }
+             
               <div className='description'>
-                {post.image && (
-                 <img src={post.image} alt="" /> 
-                )} 
                 <article>{post.description}</article>
     
                 <Link className='text-link' to={`/feed/${post._id}`}>
@@ -92,32 +91,9 @@ function UserRequests() {
                   </Link>
               </div>
               </div>
-             );
-            }else{
-              return (
-                <div className='post' key={post._id}>
-               <div className='description'>
-                 {post.image && (
-                  <img src={post.image} alt="" /> 
-                 )} 
-                 <article>{post.description}</article>
-     
-                 <Link className='text-link' to={`/feed/${post._id}`}>
-                   {post.comments.length === 1 && (
-                     <h6>{post.comments.length} Comment</h6>
-                   )}
-                   {post.comments.length !== 1 && (
-                     <h6>{post.comments.length} Comments</h6>
-                   )}
-                   </Link>
-               </div>
-               </div>
-              );
-
-            }
-            
-             
-                  
+             )
+               
+                               
           })}          
           </>
         )}
@@ -125,13 +101,13 @@ function UserRequests() {
         {UsersPosts.postsCompleted && (
           <>
           {UsersPosts.postsCompleted.map((post)=> {
-
-            if(user._id === userId){
-            
+           
              return (
                <div className='requests' key={post._id}>
-                 
-              <input id={post._id} type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} checked={post.isDone} />
+                {(user._id === userId) && 
+                 <input id={post._id} type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} checked={post.isDone} />
+                } 
+             
               <div className='description'>
                 {post.image && (
                  <img src={post.image} alt="" /> 
@@ -149,27 +125,6 @@ function UserRequests() {
               </div>
               </div>
             );
-                  }else{
-                    return (
-                      <div className='post' key={post._id}>
-                     <div>
-                       {post.image && (
-                        <img src={post.image} alt="" /> 
-                       )} 
-                       <article>{post.description}</article>
-           
-                       <Link className='text-link' to={`/feed/${post._id}`}>
-                         {post.comments.length === 1 && (
-                           <h6>{post.comments.length} Comment</h6>
-                         )}
-                         {post.comments.length !== 1 && (
-                           <h6>{post.comments.length} Comments</h6>
-                         )}
-                         </Link>
-                     </div>
-                     </div>
-                   );
-                  }
                    
           })}          
           </>
