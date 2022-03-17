@@ -37,14 +37,31 @@ function NewPost() {
       })
   }
 
-  const handlePostSubmit = (e) => {
+  const handlePostSubmit = async (e) => {
     e.preventDefault();
-
-    const body = {location, description, image, user };
-
+//IMG
     const storedToken = localStorage.getItem('authToken');
+
+    try{
+
+    
+    const uploadData = new FormData();
+      uploadData.append("image", image);
+
+      const upload = await axios.post(
+        `${process.env.REACT_APP_API_URL}/upload`,
+        uploadData,
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+    );
+
+
+
+    const body = {location, description, image: upload.data.fileUrl};
+
+  
+
     console.log(body)
-    axios
+    await axios
       .post(`${process.env.REACT_APP_API_URL}/post-create/`, body, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
@@ -54,15 +71,16 @@ function NewPost() {
         
         navigate(`/feed`);
       })
-      .catch((err) => console.log(err));
-
+    }
+      catch(error){
+        console.log(error)
+      }
   }
 
   return (
     <div className='newpost-form'>
         <form onSubmit={handlePostSubmit} method='post'>
-        {/* <Select options={locationOptions} value={location} onChange={(e) => setLocation(e.target.locationOptions.value)} /> */}
-
+        
         <select name="location" value={location} onChange={(e) => setLocation(e.target.value)}>
           {locationInput.map((element) => {
               return(
@@ -71,7 +89,8 @@ function NewPost() {
           })}
         </select>
 
-        <input type="file" id="file-upload" accept="image/png, image/jpg"/>
+    
+        <input type="file" id="file-upload" name='image' accept="image/png, image/jpg" onChange={(e)=> setImage(e.target.files[0])} required/>
 
         <label htmlFor="description">Description:</label>
         <div className='flex-btn'>
