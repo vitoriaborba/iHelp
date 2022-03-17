@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate} from 'react-router-dom';
 import { IoIosLogOut } from 'react-icons/io'
 import './ProfilePage.css' 
-import Rating from '../../components/Rating/Rating';
+import RatingFixed from '../../RatingFixed/RatingFixed';
 
 function ProfilePage() {
   const  [user, setUser] = useState([])
@@ -52,7 +52,7 @@ function ProfilePage() {
        
     )}
       <hr />
-      <Rating></Rating>
+      <RatingFixed></RatingFixed>
     </div>
   )
 }

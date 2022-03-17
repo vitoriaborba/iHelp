@@ -86,152 +86,7 @@ function PostDetails() {
                 color='rgb(81, 112, 143)'
                 />
               <p>{postDetail.location}</p>
-              {(moment(postDetail.createdAt).fromNow() === 'an hour ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                } 
-                {(moment(postDetail.createdAt).fromNow() === '2 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '3 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '4 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '5 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '6 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '7 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '8 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '9 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '10 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '11 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '12 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '13 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '14 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '15 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '16 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '17 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '18 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '19 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '20 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '21 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '22 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '23 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-                 {(moment(postDetail.createdAt).fromNow() === '24 hours ago') && 
-                <p>{moment(postDetail.createdAt).fromNow()}</p>
-                }
-
-                {(!moment(postDetail.createdAt).fromNow() === '24 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '23 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '22 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '21 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '20 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '19 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '18 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '17 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '16 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '15 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '14 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '13 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '12 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '11 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '10 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '9 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '8 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '7 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '6 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '5 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '4 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '3 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === '2 hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-                {(!moment(postDetail.createdAt).fromNow() === 'an hours ago') && 
-                <p>{moment(postDetail.createdAt).format('DD.MM.YY')}</p>
-                }
-              
+              <p>{moment(postDetail.createdAt).fromNow()}</p>
                 </div>
                 {user.username === postDetail.author.username && (
             <button style={{borderRadius:50, width:15, height:15, fontSize:8, textAlign:'center'}} onClick={deletePost}>X</button>
@@ -258,8 +113,9 @@ function PostDetails() {
                     <div >
                    <Link className='text-link userinfo' to={`/user/${postDetail.author._id}`}>
                   <img src={postDetail.author.image} style={{borderRadius:50, width:30, height:30}} alt="" />
-                  <h6>{comment.author.username}</h6>
+                  <h6>{comment.author.username}</h6> <h6 style={{color:'rgb(146, 154, 161)'}}>{moment(comment.createdAt).fromNow()}</h6>
                   </Link> 
+                  
                   </div>
                   {user.username === comment.author.username && (
                     <button style={{borderRadius:50, width:15, height:15, fontSize:8}} onClick={() => deleteComment(comment._id)}>X</button>

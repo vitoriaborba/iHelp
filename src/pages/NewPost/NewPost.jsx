@@ -114,7 +114,6 @@ function NewPost() {
         color='rgb(37, 94, 148)'
         />
         </label> 
-
         </div>
          <button type="submit">Publish ✔</button>
         </div>
