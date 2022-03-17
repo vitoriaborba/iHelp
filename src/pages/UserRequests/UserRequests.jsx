@@ -11,6 +11,7 @@ function UserRequests() {
   const {userId} = useParams();
   const [postsCompleted, setPostsCompleted] = useState('');
   const { user } = useContext(AuthContext);
+  const moment = require('moment');
 
   
   const navigate = useNavigate();
@@ -74,6 +75,7 @@ function UserRequests() {
 
               return (
                <div className='requests' key={post._id}>
+                 <h6 style={{color:'rgb(146, 154, 161)', paddingRight:20}}>{moment(post.createdAt).fromNow()}</h6>
                  {(user._id === userId) && 
                  <input id={post._id} type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} />
                   }
@@ -104,6 +106,7 @@ function UserRequests() {
            
              return (
                <div className='requests' key={post._id}>
+                 <h6 style={{color:'rgb(146, 154, 161)', paddingRight:20}}>{moment(post.createdAt).fromNow()}</h6>
                 {(user._id === userId) && 
                  <input id={post._id} type="checkbox" name="isDone" value={post.isDone} onChange={handleDoneInput} checked={post.isDone} />
                 } 
