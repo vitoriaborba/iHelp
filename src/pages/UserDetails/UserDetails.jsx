@@ -28,7 +28,7 @@ function UserDetails() {
   return (
     <div className='scroll'>
       <div className='details'> 
-      <img src={user.image} style={{borderRadius:50, width:220, height:200}} alt="" /> 
+      <img src={user.image} style={{borderRadius:10, width:220}} alt="" /> 
      </div>
      <div className='profile-btns'>
         <button onClick={() => navigate(`/requests/${user._id}`)}>@ {(user.username)}'s requests</button>

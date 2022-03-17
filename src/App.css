@@ -132,11 +132,9 @@ h3 {
 }
 .homepage {
     height: 80vh;
-    padding-top: 5vh;
     padding-bottom: 5vh;
     display: flex;
     flex-direction: column;
-    padding-top: 10rem;
 
 }
 .searchPage input {
