@@ -1,15 +1,21 @@
 body{
     background-color: rgb(238, 238, 238);
 }
-.userinfo {
+
+.post {
+    background-color: #ffffff;
+    margin: 20px 20px;
+    border-radius: 5px;
+    width: 90%;
+
+} 
+.meta {
     display: flex;
     justify-content: space-evenly;
     padding: 1vh;
-    margin-left: -8vw;
-    width:86vw;
     background-color: aliceblue;
 }
-.userinfo p {
+.meta p {
     font-size: 12px;
     margin: 0 3.5vw 0 0;
     font-weight: 700;
@@ -18,15 +24,24 @@ body{
 .location {
     display: flex;
 }
-.user-div {
+.userinfo {
     display: flex;
     justify-content:flex-start;
     align-items:center;
-    padding: 10px 0;
+    padding: 10px 20px;
 }
-.user-div h6 {
+.userinfo h6 {
     padding-left: 1vw;
 }
+
+.comments {
+    padding-bottom: 20px;
+}
+.postinfo {
+    background-color: #ffffff;
+    padding: 5px 20px;
+}
+
 .users {
     display: grid;
     grid-template-columns: 15px 15px 15px;
@@ -44,7 +59,7 @@ body{
 }
 .container {
     padding: 10px;
-    margin: 3rem 0;
+    margin: 5rem 0;
     background-color: rgb(238, 238, 238);
     text-align:start;
 }
@@ -63,18 +78,7 @@ body{
 margin-left: 2.5em;
 
 }
-.comments {
-    padding-bottom: 20px;
-}
-.post {
-    background-color: #ffffff;
-    margin: 20px 20px;
-    padding-left: 2em;
-    border-radius: 5px;
-    width: 90%;
-    height: auto;
 
-} 
 h6 {
     padding: 1em 0;
     color: rgb(46, 89, 155);
@@ -134,6 +138,7 @@ h3 {
     padding-right: 20px;
     padding-top: 10px;
     z-index: 2;
+    position: fixed;
 }
 .logo-div {
     display: flex;
