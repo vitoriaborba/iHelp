@@ -92,7 +92,7 @@ function NewPost() {
         </select>
 
     
-        <input type="file" id="file-upload" name='image' accept="image/png, image/jpg" onChange={(e)=> setImage(e.target.files[0])} required/>
+        <input type="file" id="file-upload" name='image' accept="image/png image/jpg" onChange={(e)=> setImage(e.target.files[0])}/>
 
 
         <div className='searchPage flex-btn'>
