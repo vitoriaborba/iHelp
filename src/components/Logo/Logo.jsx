@@ -1,30 +1,29 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { BiSearchAlt } from 'react-icons/bi'
-import Community from '../../pages/Community/Community'
+import { useNavigate } from 'react-router-dom'
 
 function Logo() {
-  const [showSearch, setShowSearch] = useState(false)
-
-  const toggleShow = () => {
-    setShowSearch(!showSearch);
-    console.log(showSearch);
-  };
+  const navigate = useNavigate()
   return (
-    <div logo-div>
-      <div className="logo">
+    <div className="logo">
          <img  style={{width:30, marginLeft:20}}src="https://images.pling.com/img/00/00/52/78/02/1292217/125ac9300428bfa3aa0ec3da27361d679aad.png" alt="" />
          <BiSearchAlt
           type="checkbox" 
           id="nav"
           size='35'
           color='#BDBCBC'
-          onClick={toggleShow}
+          onClick={() => navigate('/users')}
           />
     </div>
-    {showSearch && <Community/>}
-    </div>
-    
   )
 }
 
 export default Logo
+
+
+
+
+
+
+
+

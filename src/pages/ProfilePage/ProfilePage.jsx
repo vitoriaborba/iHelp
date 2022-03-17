@@ -32,8 +32,12 @@ function ProfilePage() {
     {user && (
       <>
       <div className='details'> 
-      <img src={user.image} style={{width:220, height:220, borderRadius:50}} alt="" />
-      <h2>Hello, {user.username}</h2>
+      <img src={user.image} style={{width:220, height:220, borderRadius:50, marginBottom:20}} alt="" />
+      <div class="animate">
+      <div class="loader" >
+      <h1 class="color-palette-title">Welcome, {user.username}</h1>
+      </div> 
+      </div>
     </div>
       <div className='profile-btns'>
         <button onClick={() => navigate(`/requests/${user._id}`)}>My requests</button>

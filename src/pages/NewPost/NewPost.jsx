@@ -78,7 +78,9 @@ function NewPost() {
   }
 
   return (
-    <div className='newpost-form'>
+    <div className='newpost-form scroll'>
+      <div className='ask'>
+        <h3>Ask For Help</h3>
         <form onSubmit={handlePostSubmit} method='post'>
         
         <select name="location" value={location} onChange={(e) => setLocation(e.target.value)}>
@@ -113,7 +115,8 @@ function NewPost() {
          
         </div>
       </form>
-     
+      </div>
+          
     </div>
   );
 }
