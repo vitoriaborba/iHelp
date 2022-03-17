@@ -37,7 +37,7 @@ function Community() {
   <div className='search'>
     {users.map((user)=> {
     return (
-       <div className='users' key={user._id}>
+       <div key={user._id}>
        <Link className='text-link' to={`/user/${user._id}`}>
               <div className='search-user' >
               <img src={user.image} style={{borderRadius:50, width:75, height:75}} alt="" />
