@@ -184,7 +184,7 @@ https://geoptapi.org/municipio
 
 
 ### Slides:
-https://docs.google.com/presentation/d/150STf6jlLjr0h3axYOvMfgfMbeIDrRY88so0fl-gfIs/edit?usp=sharing	
+https://www.canva.com/design/DAE7PGqZL9w/J-BeFX7OngZXupyDa9yt9g/view?utm_content=DAE7PGqZL9w&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink	
 
 
 
