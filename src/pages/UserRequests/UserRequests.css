@@ -2,11 +2,12 @@
    background-color: rgba(87, 118, 153, 0.349);
     margin: 2.5vh 5vh;
     margin-top: 2.5vh;
-    padding-left: 2.5vh;
+    padding-left: 2.5vw;
     border-radius: 1.9vh;
     width: 80%;
     display: flex;
     align-items: center;
+    justify-content: center;
 } 
 
   
