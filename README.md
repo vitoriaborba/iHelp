@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+# Project - iHelp
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+iHelp is a community made to help whoever is in need.
 
-In the project directory, you can run:
 
-### `npm start`
+**Keywords:** Help, community, social network.
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Login Credentials
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can use this credential to enter the app without the need to sign up.
 
-### `npm run build`
+**Username:** test@test.com
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Password:** 12345678
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+# Client / Frontend
+## React Router Routes (React App)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Path           | Component       | Permissions                 | Behavior                                          |
+|----------------|-----------------|-----------------------------|---------------------------------------------------|
+| `/`            | Home            | public `<Route>`            | Homepage                                          |
+| `/signup`      | SignupPage      | anon only  `<AnonRoute>`    | Signup form, navigates to login page after signup.|
+| `/login`       | LoginPage       | anon only  `<AnonRoute>`    | Login form, navigates to feed page after login.   |
+| `/feed`        | Feed            | anon only  `<AnonRoute>`    | Show requests from all users.                     |
+| `/user`        | UserDetails     | anon only  `<AnonRoute>`    | Show the log in user profile page.                |
+| `/requests`    | UserRequests    | anon only  `<AnonRoute>`    | Show the pending and completed user requests from the log in user. |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    
+ 
+## Components
+**Pages**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* LoginPage.                   
+* SignupPage.                 
+* Home                            
+* ProfilePage                    
+* Feed.                              
+* EditProfile
+* Community
+* NewPost
+* PostDetails
+* UserDetails                   
+* UserRequests                
 
-## Learn More
+**Components**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* IsAnon
+* IsPrivate
+* Logo
+* NavBar
+* Rating
+* SearchBar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+# Server / Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Models:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+**User model**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```javascript
+{
+  username: { type: String,
+      unique: true,
+      trim: true,
+      required: true,
+      lowercase: true,
+  },
+  email: {
+      type: String, 
+      unique: true,
+      trim: true,
+      required: true,
+      lowercase: true,
+  },
+  image: {
+      type: String,
+      default: "https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png"
+  },
+   password: {
+    type: String,
+    required: true,
+    trim: true,
+   },
+   posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
+   postsCompleted: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
+   wasHelped: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+   Helped: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+},
+  {
+    timestamps: true,
+  }
+  ```
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Post model**
 
-### Deployment
+```javascript
+{
+    author: { type: Schema.Types.ObjectId, ref: 'User' },
+    image: {
+        type: String,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    location: {
+        type: String,
+        required: true,
+    },
+    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+    isDone: {
+        type: Boolean,
+        default: false,
+    },
+      {
+        timestamps: true,
+    }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Comment model**
 
-### `npm run build` fails to minify
+```javascript
+{
+    author: { type: Schema.Types.ObjectId, ref: "User" },
+    post: { type: Schema.Types.ObjectId, ref: "Post" },
+    content: String
+  },
+  {
+    timestamps: true
+  }
+```
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API Endpoints (backend routes)
+
+| HTTP Method | URL                     | Request Body                  | Success status | Error Status | Description                                                 
+| ----------- | ----------------------- | ----------------------------- | -------------- | ------------ | ----------------------------------------------
+| POST        | /signup                 | { username, email, password } | 201            | 500          | Checks if fields not empty (422) and user not exists (409), then create user with encrypted password, and store user in session |
+| POST        | /login                  | {username, password}          | 201            | 500          | Checks if fields not empty (422), if user exists (404), and if password matches (404), then stores user in session|
+| GET         | /verify                 | Saved token                   | 200            | 500          | Check if the user has the authorization token to access the app |
+| GET         | /users                  |              -                | 200            | 500          | Get all users                                
+| GET         | /user		                | {_id}	                        | 200            | 500          | Checks for the user id                       
+| GET         | /user/:id	              | { id }	                      | 200            | 500          | Get the profile from the login user         
+| PUT         | /user/:userid	          | { username, email, password } | 200            | 500          | Edit user details
+| POST        | /comment/:postId        | { postId, content, _id }      | 200            | 500          | Create a post
+| DELETE      | /post/:commentId	      | -                             | 204            | 500          | Delete post                                
+| GET         | /feed/:postId           | {postId}                      | 200            | 500          | Get post details
+| POST        | /upload 			          | -                             | 200            | 500          | Uploads an image
+
+<br>
+
+## Links:
+
+### Figma:
+https://www.figma.com/file/mD02aURiYGoJYKB5Z9NL7y/iHelp-App?node-id=0%3A1
+
+### Notion:
+https://www.notion.so/iHelp-App-1a6ea7b2238443fb8892d023a621f428
+
+### Git:
+[Client repository Link](https://github.com/vitoriaborba/project-management-client)
+
+[Server repository Link](https://github.com/vitoriaborba/project-management-server)
+
+[Deployed App Link](https://i-help.netlify.app/)			
+
+ 
+### API used:
+https://geoptapi.org/municipio
+
+
+### Slides:
+
+			
+
+
+
+
+
+
+
