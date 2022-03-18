@@ -147,6 +147,13 @@ h3 {
     box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
     transition: box-shadow 0.2s ease-in;
 }
+.searchPage textarea {
+    box-sizing: border-box;
+    border: none;
+    
+    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+    transition: box-shadow 0.2s ease-in;
+}
 
 .searchPage {
    padding-top: 30px;
