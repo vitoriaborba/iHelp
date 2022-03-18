@@ -111,7 +111,7 @@ function PostDetails() {
                 <div className='comment-div' key={comment._id}>
                   <div className='deletebtn'>
                     <div >
-                   <Link className='text-link userinfo' to={`/user/${postDetail.author._id}`}>
+                   <Link className='text-link userinfo' to={`/user/${comment.author._id}`}>
                   <img src={comment.author.image} style={{borderRadius:50, width:30, height:30}} alt="" />
                   <h6>{comment.author.username}</h6> <h6 style={{color:'rgb(146, 154, 161)'}}>{moment(comment.createdAt).fromNow()}</h6>
                   </Link> 
