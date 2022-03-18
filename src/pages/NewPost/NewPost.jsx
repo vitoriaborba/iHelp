@@ -10,7 +10,7 @@ import './NewPost.css'
 function NewPost() {
   const [locationInput, setLocationInput] = useState([]);
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
   const [location, setLocation] = useState("")
 
   const { user } = useContext(AuthContext);
@@ -46,27 +46,30 @@ function NewPost() {
 
     
     const uploadData = new FormData();
-      uploadData.append("image", image);
+      uploadData.append("image", imageUrl);
+      let upload;
+      let body;
 
-      const upload = await axios.post(
+      if (!imageUrl) {
+        console.log(uploadData)
+        body = {location, description};
+      } else {
+        upload = await axios.post(
         `${process.env.REACT_APP_API_URL}/upload`,
-        uploadData,
-        { headers: { Authorization: `Bearer ${storedToken}` } }
-    );
+        uploadData,{ headers: { Authorization: `Bearer ${storedToken}`}})
+        body = {location, description, image:upload.data.fileUrl };
+      }
+     
+    
 
-
-
-    const body = {location, description, image: upload.data.fileUrl};
-
-  
-
+ 
     console.log(body)
     await axios
       .post(`${process.env.REACT_APP_API_URL}/post-create/`, body, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        setImage(null);
+        setImageUrl(null);
         setDescription('');
         
         navigate(`/feed`);
@@ -92,20 +95,23 @@ function NewPost() {
         </select>
 
     
-        <input type="file" id="file-upload" name='image' accept="image/png image/jpg" onChange={(e)=> setImage(e.target.files[0])}/>
+        <input type="file" id="file-upload" name='image' accept="image/png image/jpg" onChange={(e)=> setImageUrl(e.target.files[0])}/>
 
 
         <div className='searchPage flex-btn'>
         
-        <input
+        <textarea
           id='newpost'
           type="text"
+          cols={40}
+          rows={4}
           maxLength='280'
           name="description"
           placeholder='Your description here'
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        />
+        ></textarea>
+        
         <div className='profile-btns'>
         
          <label htmlFor="file-upload" className="custom-file-upload">
